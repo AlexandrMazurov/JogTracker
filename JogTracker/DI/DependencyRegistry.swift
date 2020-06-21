@@ -9,7 +9,7 @@
 import UIKit
 import Swinject
 
-protocol DependencyRegistryProtocol {
+protocol DependencyRegistryProtocol: class {
     var container: Container { get }
 }
 
@@ -25,7 +25,17 @@ class DependencyRegistry: DependencyRegistryProtocol {
     }
     
     private func registerDependencies() {
+        container.register(RootNavigationCoordinator.self) { (_, rootViewController: UIViewController) in
+            return RootNavigationCoordinator(with: rootViewController, registry: self)
+        }
         
+        container.register(JogsNavigationCoordinator.self) { (_, rootViewController: UIViewController) in
+            return JogsNavigationCoordinator(with: rootViewController, registry: self)
+        }
+        
+        container.register(LoginNavigationCoordinator.self) { (_, rootViewController: UIViewController) in
+            return LoginNavigationCoordinator(with: rootViewController, registry: self)
+        }
     }
     
     private func registerViewModels() {
