@@ -9,7 +9,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    static var dependencyRegistry: DependencyRegistryProtocol!
     var window: UIWindow?
 
 
