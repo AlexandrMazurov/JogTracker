@@ -10,5 +10,9 @@ target 'JogTracker' do
   # DI
     pod 'Swinject'
     pod 'SwinjectStoryboard'
+ 
+  # RX
+    pod 'RxSwift'
+    pod 'RxCocoa'
 
 end
