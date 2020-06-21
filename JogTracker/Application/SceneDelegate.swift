@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     static var dependencyRegistry: DependencyRegistryProtocol!
+    static var rootCoordinator: NavigationCoordinatorProtocol!
     var window: UIWindow?
 
 

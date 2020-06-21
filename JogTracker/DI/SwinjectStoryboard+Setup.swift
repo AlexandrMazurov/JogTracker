@@ -24,6 +24,10 @@ extension SwinjectStoryboard {
             // TODO: make storyboardInitCompleted
         }
         
+        func setupData(navigationCoordinator: NavigationCoordinatorProtocol) {
+            SceneDelegate.rootCoordinator = navigationCoordinator
+        }
+        
         main()
     }
 }
