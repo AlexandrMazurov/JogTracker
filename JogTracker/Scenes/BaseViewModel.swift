@@ -7,7 +7,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+
+public enum Result<OutputType> {
+    case started
+    case success(OutputType)
+    case error(Error)
+}
 
 public class BaseViewModel {
+    let rxBag = DisposeBag()
+    let inProgress = PublishSubject<Result<Bool>?>()
     
+    func setup() {
+        createObservers()
+    }
+    func createObservers() {}
 }

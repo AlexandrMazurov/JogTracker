@@ -14,6 +14,9 @@
 		1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34617E249FCD770037111B /* RootNavigationCoordinator.swift */; };
 		1F346189249FD68E0037111B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F346188249FD68E0037111B /* BaseViewController.swift */; };
 		1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618A249FD6980037111B /* BaseViewModel.swift */; };
+		1F34618E249FDAA20037111B /* View-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618D249FDAA20037111B /* View-Layout.swift */; };
+		1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618F249FDD390037111B /* UIViewController+Alerts.swift */; };
+		1F346192249FDDD10037111B /* Error+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F346191249FDDD10037111B /* Error+Description.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -34,6 +37,9 @@
 		1F34617E249FCD770037111B /* RootNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationCoordinator.swift; sourceTree = "<group>"; };
 		1F346188249FD68E0037111B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1F34618A249FD6980037111B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		1F34618D249FDAA20037111B /* View-Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Layout.swift"; sourceTree = "<group>"; };
+		1F34618F249FDD390037111B /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		1F346191249FDDD10037111B /* Error+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Description.swift"; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +127,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		1F34618C249FDA860037111B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1F34618D249FDAA20037111B /* View-Layout.swift */,
+				1F34618F249FDD390037111B /* UIViewController+Alerts.swift */,
+				1F346191249FDDD10037111B /* Error+Description.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				1F4B2976249FB6BD009EB6DD /* Application */,
+				1F34618C249FDA860037111B /* Helpers */,
 				1F4B2977249FBFA0009EB6DD /* DI */,
 				1F346175249FC9220037111B /* Navigation */,
 				1F346180249FD6260037111B /* Scenes */,
@@ -306,15 +323,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4BA864249FA35C002D0056 /* ViewController.swift in Sources */,
+				1F34618E249FDAA20037111B /* View-Layout.swift in Sources */,
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
 				1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */,
+				1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */,
 				1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */,
 				1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
+				1F346192249FDDD10037111B /* Error+Description.swift in Sources */,
 				1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */,
 				1F34617D249FCC9E0037111B /* LoginNavigationCoordinator.swift in Sources */,
 			);
