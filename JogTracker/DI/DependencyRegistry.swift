@@ -45,11 +45,47 @@ class DependencyRegistry: DependencyRegistryProtocol {
     }
     
     private func registerViewModels() {
+        container.register(LaunchViewModel.self) { _ in
+            LaunchViewModel()
+        }
         
+        container.register(LoginViewModel.self) { _ in
+            LoginViewModel()
+        }
+        
+        container.register(FeedbackViewModel.self) { _ in
+            FeedbackViewModel()
+        }
+        
+        container.register(StatisticViewModel.self) { _ in
+            StatisticViewModel()
+        }
+        
+        container.register(JogsViewModel.self) { _ in
+            JogsViewModel()
+        }
     }
     
     private func registerViewControllers() {
+        container.register(LaunchViewController.self) { _ in
+            LaunchViewController.instantiate(from: .launch)
+        }
         
+        container.register(LoginViewController.self) { _ in
+            LoginViewController.instantiate(from: .login)
+        }
+        
+        container.register(FeedbackViewController.self) { _ in
+            FeedbackViewController.instantiate(from: .feedback)
+        }
+        
+        container.register(StatisticViewController.self) { _ in
+            StatisticViewController.instantiate(from: .statistic)
+        }
+        
+        container.register(JogsViewController.self) { _ in
+            JogsViewController.instantiate(from: .jogs)
+        }
     }
     
     func makeRootNavigationCoordinator(rootViewController: UIViewController) -> NavigationCoordinatorProtocol {

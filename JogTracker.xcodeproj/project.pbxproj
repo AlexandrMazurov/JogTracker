@@ -27,6 +27,12 @@
 		1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461AC249FE96D0037111B /* StatisticViewModel.swift */; };
 		1F3461AF249FE9760037111B /* JogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461AE249FE9760037111B /* JogsViewModel.swift */; };
 		1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461B0249FE9830037111B /* LaunchViewModel.swift */; };
+		1F3461B3249FECC00037111B /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B2249FECC00037111B /* LoginViewController.storyboard */; };
+		1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B4249FECDF0037111B /* FeedbackViewController.storyboard */; };
+		1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */; };
+		1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B8249FECFF0037111B /* JogsViewController.storyboard */; };
+		1F3461BB249FED110037111B /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461BA249FED110037111B /* LaunchViewController.storyboard */; };
+		1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461BC249FED300037111B /* ControllerEntries.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -60,6 +66,12 @@
 		1F3461AC249FE96D0037111B /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
 		1F3461AE249FE9760037111B /* JogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewModel.swift; sourceTree = "<group>"; };
 		1F3461B0249FE9830037111B /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		1F3461B2249FECC00037111B /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		1F3461B4249FECDF0037111B /* FeedbackViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackViewController.storyboard; sourceTree = "<group>"; };
+		1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticViewController.storyboard; sourceTree = "<group>"; };
+		1F3461B8249FECFF0037111B /* JogsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JogsViewController.storyboard; sourceTree = "<group>"; };
+		1F3461BA249FED110037111B /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
+		1F3461BC249FED300037111B /* ControllerEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntries.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +129,7 @@
 			children = (
 				1F34619B249FE8D00037111B /* Controller */,
 				1F34619A249FE8CE0037111B /* ViewModel */,
+				1F3461BA249FED110037111B /* LaunchViewController.storyboard */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 			children = (
 				1F346199249FE8CB0037111B /* Controller */,
 				1F346198249FE8C70037111B /* ViewModel */,
+				1F3461B8249FECFF0037111B /* JogsViewController.storyboard */,
 			);
 			path = Jogs;
 			sourceTree = "<group>";
@@ -135,6 +149,7 @@
 			children = (
 				1F346196249FE8BA0037111B /* Controller */,
 				1F346195249FE8B60037111B /* ViewModel */,
+				1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -144,6 +159,7 @@
 			children = (
 				1F346194249FE8A80037111B /* Controller */,
 				1F346193249FE8A40037111B /* ViewModel */,
+				1F3461B4249FECDF0037111B /* FeedbackViewController.storyboard */,
 			);
 			path = FeedBack;
 			sourceTree = "<group>";
@@ -153,6 +169,7 @@
 			children = (
 				1F34619D249FE8D60037111B /* Controller */,
 				1F34619C249FE8D40037111B /* ViewModel */,
+				1F3461B2249FECC00037111B /* LoginViewController.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -163,6 +180,7 @@
 				1F34618D249FDAA20037111B /* View-Layout.swift */,
 				1F34618F249FDD390037111B /* UIViewController+Alerts.swift */,
 				1F346191249FDDD10037111B /* Error+Description.swift */,
+				1F3461BC249FED300037111B /* ControllerEntries.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,7 +395,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3461BB249FED110037111B /* LaunchViewController.storyboard in Resources */,
 				1F4BA86C249FA35F002D0056 /* LaunchScreen.storyboard in Resources */,
+				1F3461B3249FECC00037111B /* LoginViewController.storyboard in Resources */,
+				1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */,
+				1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */,
+				1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */,
 				1F4BA869249FA35F002D0056 /* Assets.xcassets in Resources */,
 				1F4BA867249FA35C002D0056 /* Main.storyboard in Resources */,
 			);
@@ -446,6 +469,7 @@
 				1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
+				1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */,
 				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
