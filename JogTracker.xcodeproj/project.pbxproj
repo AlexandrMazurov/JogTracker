@@ -37,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F4B2976249FB6BD009EB6DD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1F4BA861249FA35C002D0056 /* SceneDelegate.swift */,
+				1F4BA85F249FA35C002D0056 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		1F4BA853249FA35C002D0056 = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +65,7 @@
 		1F4BA85E249FA35C002D0056 /* JogTracker */ = {
 			isa = PBXGroup;
 			children = (
-				1F4BA85F249FA35C002D0056 /* AppDelegate.swift */,
-				1F4BA861249FA35C002D0056 /* SceneDelegate.swift */,
+				1F4B2976249FB6BD009EB6DD /* Application */,
 				1F4BA863249FA35C002D0056 /* ViewController.swift */,
 				1F4BA865249FA35C002D0056 /* Main.storyboard */,
 				1F4BA868249FA35F002D0056 /* Assets.xcassets */,
