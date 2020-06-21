@@ -17,6 +17,16 @@
 		1F34618E249FDAA20037111B /* View-Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618D249FDAA20037111B /* View-Layout.swift */; };
 		1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618F249FDD390037111B /* UIViewController+Alerts.swift */; };
 		1F346192249FDDD10037111B /* Error+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F346191249FDDD10037111B /* Error+Description.swift */; };
+		1F34619F249FE9060037111B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34619E249FE9060037111B /* LoginViewController.swift */; };
+		1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461A0249FE9230037111B /* FeedbackViewController.swift */; };
+		1F3461A3249FE92E0037111B /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461A2249FE92E0037111B /* StatisticViewController.swift */; };
+		1F3461A5249FE9360037111B /* JogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461A4249FE9360037111B /* JogsViewController.swift */; };
+		1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461A6249FE9440037111B /* LaunchViewController.swift */; };
+		1F3461A9249FE9580037111B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461A8249FE9580037111B /* LoginViewModel.swift */; };
+		1F3461AB249FE9620037111B /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461AA249FE9620037111B /* FeedbackViewModel.swift */; };
+		1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461AC249FE96D0037111B /* StatisticViewModel.swift */; };
+		1F3461AF249FE9760037111B /* JogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461AE249FE9760037111B /* JogsViewModel.swift */; };
+		1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461B0249FE9830037111B /* LaunchViewModel.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -40,6 +50,16 @@
 		1F34618D249FDAA20037111B /* View-Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-Layout.swift"; sourceTree = "<group>"; };
 		1F34618F249FDD390037111B /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		1F346191249FDDD10037111B /* Error+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Description.swift"; sourceTree = "<group>"; };
+		1F34619E249FE9060037111B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F3461A0249FE9230037111B /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		1F3461A2249FE92E0037111B /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		1F3461A4249FE9360037111B /* JogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewController.swift; sourceTree = "<group>"; };
+		1F3461A6249FE9440037111B /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		1F3461A8249FE9580037111B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1F3461AA249FE9620037111B /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
+		1F3461AC249FE96D0037111B /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
+		1F3461AE249FE9760037111B /* JogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsViewModel.swift; sourceTree = "<group>"; };
+		1F3461B0249FE9830037111B /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +115,8 @@
 		1F346181249FD6340037111B /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				1F34619B249FE8D00037111B /* Controller */,
+				1F34619A249FE8CE0037111B /* ViewModel */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -102,6 +124,8 @@
 		1F346182249FD6400037111B /* Jogs */ = {
 			isa = PBXGroup;
 			children = (
+				1F346199249FE8CB0037111B /* Controller */,
+				1F346198249FE8C70037111B /* ViewModel */,
 			);
 			path = Jogs;
 			sourceTree = "<group>";
@@ -109,6 +133,8 @@
 		1F346183249FD6470037111B /* Statistic */ = {
 			isa = PBXGroup;
 			children = (
+				1F346196249FE8BA0037111B /* Controller */,
+				1F346195249FE8B60037111B /* ViewModel */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -116,6 +142,8 @@
 		1F346184249FD64E0037111B /* FeedBack */ = {
 			isa = PBXGroup;
 			children = (
+				1F346194249FE8A80037111B /* Controller */,
+				1F346193249FE8A40037111B /* ViewModel */,
 			);
 			path = FeedBack;
 			sourceTree = "<group>";
@@ -123,6 +151,8 @@
 		1F346187249FD6740037111B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1F34619D249FE8D60037111B /* Controller */,
+				1F34619C249FE8D40037111B /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -135,6 +165,86 @@
 				1F346191249FDDD10037111B /* Error+Description.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1F346193249FE8A40037111B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461AA249FE9620037111B /* FeedbackViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F346194249FE8A80037111B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461A0249FE9230037111B /* FeedbackViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F346195249FE8B60037111B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461AC249FE96D0037111B /* StatisticViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F346196249FE8BA0037111B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461A2249FE92E0037111B /* StatisticViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F346198249FE8C70037111B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461AE249FE9760037111B /* JogsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F346199249FE8CB0037111B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461A4249FE9360037111B /* JogsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F34619A249FE8CE0037111B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461B0249FE9830037111B /* LaunchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F34619B249FE8D00037111B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461A6249FE9440037111B /* LaunchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F34619C249FE8D40037111B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461A8249FE9580037111B /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F34619D249FE8D60037111B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F34619E249FE9060037111B /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
@@ -324,19 +434,29 @@
 			files = (
 				1F4BA864249FA35C002D0056 /* ViewController.swift in Sources */,
 				1F34618E249FDAA20037111B /* View-Layout.swift in Sources */,
+				1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */,
+				1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */,
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
+				1F3461AB249FE9620037111B /* FeedbackViewModel.swift in Sources */,
 				1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */,
 				1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */,
 				1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */,
 				1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */,
+				1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
+				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
+				1F34619F249FE9060037111B /* LoginViewController.swift in Sources */,
 				1F346192249FDDD10037111B /* Error+Description.swift in Sources */,
+				1F3461A3249FE92E0037111B /* StatisticViewController.swift in Sources */,
+				1F3461A5249FE9360037111B /* JogsViewController.swift in Sources */,
 				1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */,
+				1F3461AF249FE9760037111B /* JogsViewModel.swift in Sources */,
 				1F34617D249FCC9E0037111B /* LoginNavigationCoordinator.swift in Sources */,
+				1F3461A9249FE9580037111B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
