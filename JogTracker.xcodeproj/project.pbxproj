@@ -12,6 +12,8 @@
 		1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34617A249FCB260037111B /* JogsNavigationCoordinator.swift */; };
 		1F34617D249FCC9E0037111B /* LoginNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34617C249FCC9E0037111B /* LoginNavigationCoordinator.swift */; };
 		1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34617E249FCD770037111B /* RootNavigationCoordinator.swift */; };
+		1F346189249FD68E0037111B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F346188249FD68E0037111B /* BaseViewController.swift */; };
+		1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F34618A249FD6980037111B /* BaseViewModel.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 		1F34617A249FCB260037111B /* JogsNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsNavigationCoordinator.swift; sourceTree = "<group>"; };
 		1F34617C249FCC9E0037111B /* LoginNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigationCoordinator.swift; sourceTree = "<group>"; };
 		1F34617E249FCD770037111B /* RootNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigationCoordinator.swift; sourceTree = "<group>"; };
+		1F346188249FD68E0037111B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1F34618A249FD6980037111B /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +70,55 @@
 				1F34617E249FCD770037111B /* RootNavigationCoordinator.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1F346180249FD6260037111B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1F346187249FD6740037111B /* Login */,
+				1F346184249FD64E0037111B /* FeedBack */,
+				1F346183249FD6470037111B /* Statistic */,
+				1F346182249FD6400037111B /* Jogs */,
+				1F346181249FD6340037111B /* Launch */,
+				1F346188249FD68E0037111B /* BaseViewController.swift */,
+				1F34618A249FD6980037111B /* BaseViewModel.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1F346181249FD6340037111B /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		1F346182249FD6400037111B /* Jogs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Jogs;
+			sourceTree = "<group>";
+		};
+		1F346183249FD6470037111B /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		1F346184249FD64E0037111B /* FeedBack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeedBack;
+			sourceTree = "<group>";
+		};
+		1F346187249FD6740037111B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
@@ -110,6 +163,7 @@
 				1F4B2976249FB6BD009EB6DD /* Application */,
 				1F4B2977249FBFA0009EB6DD /* DI */,
 				1F346175249FC9220037111B /* Navigation */,
+				1F346180249FD6260037111B /* Scenes */,
 				1F4BA863249FA35C002D0056 /* ViewController.swift */,
 				1F4BA865249FA35C002D0056 /* Main.storyboard */,
 				1F4BA868249FA35F002D0056 /* Assets.xcassets */,
@@ -253,8 +307,10 @@
 			files = (
 				1F4BA864249FA35C002D0056 /* ViewController.swift in Sources */,
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
+				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
 				1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */,
 				1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */,
+				1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
