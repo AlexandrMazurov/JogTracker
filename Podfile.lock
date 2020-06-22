@@ -8,9 +8,15 @@ PODS:
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
+  - RxGesture (3.0.2):
+    - RxCocoa (~> 5.1)
+    - RxSwift (~> 5.1)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - RxViewController (1.0.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - Swinject (2.7.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -18,7 +24,9 @@ PODS:
 DEPENDENCIES:
   - Moya/RxSwift
   - RxCocoa
+  - RxGesture
   - RxSwift
+  - RxViewController
   - Swinject
   - SwinjectStoryboard
 
@@ -27,8 +35,10 @@ SPEC REPOS:
     - Alamofire
     - Moya
     - RxCocoa
+    - RxGesture
     - RxRelay
     - RxSwift
+    - RxViewController
     - Swinject
     - SwinjectStoryboard
 
@@ -36,11 +46,13 @@ SPEC CHECKSUMS:
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: daea42db3e8f7219ef0ba2572f5d73016fa822db
+PODFILE CHECKSUM: a3e1d27074e3d0e2d3a6a540760f2f70ea46974c
 
 COCOAPODS: 1.8.4

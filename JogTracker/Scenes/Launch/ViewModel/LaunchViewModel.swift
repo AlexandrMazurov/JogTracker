@@ -6,17 +6,22 @@
 //  Copyright © 2020 AlexandrMazurov. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
+
 class LaunchViewModel: BaseViewModel {
     
-    var isAuthenticated = true
+    weak var auth: AuthServiceProtocol?
     
     override func setup() {
         super.setup()
     }
     
+    init(auth: AuthServiceProtocol?) {
+        self.auth = auth
+    }
+    
     override func createObservers() {
         
     }
-    
-    
 }

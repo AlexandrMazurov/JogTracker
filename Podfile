@@ -17,5 +17,7 @@ target 'JogTracker' do
 	
   # RxSwift 3rd libs
     pod 'Moya/RxSwift'
+    pod 'RxViewController'
+    pod 'RxGesture'
 
 end

@@ -11,6 +11,8 @@ import RxCocoa
 
 public class AuthenticationService: AuthServiceProtocol {
     
+    private(set) var isAuthenticated = BehaviorRelay<Bool?>(value: nil)
+    
     private let network: AuthNetworkProtocol?
     private weak var preferences: AppPreferences?
     private let rxBag = DisposeBag()
@@ -18,6 +20,7 @@ public class AuthenticationService: AuthServiceProtocol {
     init(authApi: AuthNetworkProtocol?, preferences: AppPreferences?) {
         self.network = authApi
         self.preferences = preferences
+        isAuthenticated.accept(preferences?.isUserMakeLogin)
     }
     
     func signIn(by uuid: String) -> Single<Bool> {
@@ -30,6 +33,7 @@ public class AuthenticationService: AuthServiceProtocol {
             let disposable = network.signIn(by: uuid)
                 .subscribe(onSuccess: { userCredentials in
                     self?.preferences?.userToken = userCredentials.accessToken
+                    self?.isAuthenticated.accept(true)
                     single(SingleEvent.success(true))
                 }, onError: { error in
                     single(SingleEvent.error(error))
@@ -40,6 +44,7 @@ public class AuthenticationService: AuthServiceProtocol {
     
     func signOut() {
         preferences?.userToken = nil
+        isAuthenticated.accept(false)
     }
     
     

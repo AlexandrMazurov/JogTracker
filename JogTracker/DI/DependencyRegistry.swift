@@ -58,12 +58,12 @@ class DependencyRegistry: DependencyRegistryProtocol {
     }
     
     private func registerViewModels() {
-        container.register(LaunchViewModel.self) { _ in
-            LaunchViewModel()
+        container.register(LaunchViewModel.self) {
+            LaunchViewModel(auth: $0.resolve(AuthServiceProtocol.self))
         }
         
-        container.register(LoginViewModel.self) { _ in
-            LoginViewModel()
+        container.register(LoginViewModel.self) {
+            LoginViewModel(auth: $0.resolve(AuthServiceProtocol.self))
         }
         
         container.register(FeedbackViewModel.self) { _ in

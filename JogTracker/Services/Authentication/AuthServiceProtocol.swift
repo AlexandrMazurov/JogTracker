@@ -9,7 +9,9 @@
 import RxSwift
 import RxCocoa
 
-protocol AuthServiceProtocol {
+protocol AuthServiceProtocol: class {
+    
+    var isAuthenticated: BehaviorRelay<Bool?> { get }
 
     func signIn(by uuid: String) -> Single<Bool>
     func signOut()

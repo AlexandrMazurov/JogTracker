@@ -8,6 +8,8 @@
 
 import RxSwift
 import RxCocoa
+import RxViewController
+import RxGesture
 
 class LaunchViewController: BaseViewController {
     
@@ -18,22 +20,36 @@ class LaunchViewController: BaseViewController {
     override func createObservers() {
         super.createObservers()
         
-        guard let viewModel = launchViewModel else {
-            return
-        }
+        rx.viewDidAppear
+            .take(1)
+            .map { _ in () }
+            .bind(onNext: createObserving)
+            .disposed(by: rxBag)
     }
     
-    public override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        guard let isAuthenticated = launchViewModel?.isAuthenticated else {
+    private func createObserving() {
+        guard let auth = launchViewModel?.auth else {
             print("LaunchViewModel was not initialized")
             return
         }
         
-        let navigation: RootNavigationState = isAuthenticated ? .toJogs : .toLogin
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.coordinator?.next(navigation)
+        auth.isAuthenticated
+            .debug()
+            .distinctUntilChanged()
+            .filter { !($0 ?? true) }
+            .map { _ in RootNavigationState.toLogout }
+            .observeOn(MainScheduler.instance)
+            .subscribe { self.coordinator?.next($0.element) }
+            .disposed(by: rxBag)
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let isAuthenticated = launchViewModel?.auth?.isAuthenticated.value else {
+            print("LaunchViewModel was not initialized")
+            return
         }
+        let navigation: RootNavigationState = isAuthenticated ? .toJogs : .toLogin
+        self.coordinator?.next(navigation)
     }
 }

@@ -27,4 +27,8 @@ final class AppPreferences {
             defaults.set(newValue, forKey: Constants.userTokenKey)
         }
     }
+    
+    var isUserMakeLogin: Bool {
+        userToken != nil
+    }
 }
