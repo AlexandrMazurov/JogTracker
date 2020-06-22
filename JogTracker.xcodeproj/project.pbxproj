@@ -32,6 +32,7 @@
 		1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */; };
 		1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B8249FECFF0037111B /* JogsViewController.storyboard */; };
 		1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461BC249FED300037111B /* ControllerEntries.swift */; };
+		1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461C124A0EF740037111B /* NetworkLayer.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -69,6 +70,7 @@
 		1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticViewController.storyboard; sourceTree = "<group>"; };
 		1F3461B8249FECFF0037111B /* JogsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JogsViewController.storyboard; sourceTree = "<group>"; };
 		1F3461BC249FED300037111B /* ControllerEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntries.swift; sourceTree = "<group>"; };
+		1F3461C124A0EF740037111B /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +263,30 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		1F3461BE24A0EF360037111B /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461BF24A0EF470037111B /* NetworkLayer */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		1F3461BF24A0EF470037111B /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461C024A0EF5F0037111B /* Auth */,
+				1F3461C124A0EF740037111B /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		1F3461C024A0EF5F0037111B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +330,7 @@
 				1F34618C249FDA860037111B /* Helpers */,
 				1F4B2977249FBFA0009EB6DD /* DI */,
 				1F346175249FC9220037111B /* Navigation */,
+				1F3461BE24A0EF360037111B /* Layers */,
 				1F346180249FD6260037111B /* Scenes */,
 				1F4BA868249FA35F002D0056 /* Assets.xcassets */,
 				1F4BA86A249FA35F002D0056 /* LaunchScreen.storyboard */,
@@ -464,6 +491,7 @@
 				1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */,
 				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
+				1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
 				1F34619F249FE9060037111B /* LoginViewController.swift in Sources */,
 				1F346192249FDDD10037111B /* Error+Description.swift in Sources */,
