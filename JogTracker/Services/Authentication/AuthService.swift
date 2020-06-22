@@ -31,8 +31,8 @@ public class AuthenticationService: AuthServiceProtocol {
             }
             
             let disposable = network.signIn(by: uuid)
-                .subscribe(onSuccess: { userCredentials in
-                    self?.preferences?.userToken = userCredentials.accessToken
+                .subscribe(onSuccess: { loginResponse in
+                    self?.preferences?.userToken = loginResponse.response.accessToken
                     self?.isAuthenticated.accept(true)
                     single(SingleEvent.success(true))
                 }, onError: { error in

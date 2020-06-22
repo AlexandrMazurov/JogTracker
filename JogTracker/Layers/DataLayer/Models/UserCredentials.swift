@@ -8,6 +8,10 @@
 
 import Foundation
 
+struct LoginResponse: Decodable {
+    let response: UserCredentials
+}
+
 struct UserCredentials: Decodable {
     
     let accessToken: String

@@ -34,7 +34,6 @@ class LaunchViewController: BaseViewController {
         }
         
         auth.isAuthenticated
-            .debug()
             .distinctUntilChanged()
             .filter { !($0 ?? true) }
             .map { _ in RootNavigationState.toLogout }

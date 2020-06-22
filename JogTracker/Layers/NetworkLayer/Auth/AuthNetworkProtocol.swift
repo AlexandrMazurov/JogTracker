@@ -13,6 +13,6 @@ import Moya
 protocol AuthNetworkProtocol {
     var authProvider: MoyaProvider<AuthEndPoints> { get }
     var authError: PublishSubject<NetworkError> { get }
-    func signIn(by uuid: String) -> Single<UserCredentials>
+    func signIn(by uuid: String) -> Single<LoginResponse>
 }
 
