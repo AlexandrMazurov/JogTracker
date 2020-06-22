@@ -42,6 +42,19 @@ class DependencyRegistry: DependencyRegistryProtocol {
         container.register(LoginNavigationCoordinator.self) { (_, rootViewController: UIViewController) in
             return LoginNavigationCoordinator(with: rootViewController, registry: self)
         }
+        
+        container.register(AppPreferences.self) { _ in
+            AppPreferences()
+        }.inObjectScope(.container)
+        
+        container.register(NetworkLayer.self) {_ in
+            NetworkLayer()
+        }.inObjectScope(.container)
+        
+        container.register(AuthServiceProtocol.self) {
+            AuthenticationService(authApi: $0.resolve(NetworkLayer.self),
+                                  preferences: $0.resolve(AppPreferences.self))
+        }.inObjectScope(.container)
     }
     
     private func registerViewModels() {
