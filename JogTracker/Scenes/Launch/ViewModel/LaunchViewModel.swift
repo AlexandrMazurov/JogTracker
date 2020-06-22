@@ -8,6 +8,8 @@
 
 class LaunchViewModel: BaseViewModel {
     
+    var isAuthenticated = true
+    
     override func setup() {
         super.setup()
     }
@@ -15,4 +17,6 @@ class LaunchViewModel: BaseViewModel {
     override func createObservers() {
         
     }
+    
+    
 }

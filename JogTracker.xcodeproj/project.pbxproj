@@ -125,6 +125,7 @@
 			children = (
 				1F34619B249FE8D00037111B /* Controller */,
 				1F34619A249FE8CE0037111B /* ViewModel */,
+				1F4BA865249FA35C002D0056 /* Main.storyboard */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -304,7 +305,6 @@
 				1F4B2977249FBFA0009EB6DD /* DI */,
 				1F346175249FC9220037111B /* Navigation */,
 				1F346180249FD6260037111B /* Scenes */,
-				1F4BA865249FA35C002D0056 /* Main.storyboard */,
 				1F4BA868249FA35F002D0056 /* Assets.xcassets */,
 				1F4BA86A249FA35F002D0056 /* LaunchScreen.storyboard */,
 				1F4BA86D249FA35F002D0056 /* Info.plist */,
