@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Moya
 
-extension NetworkLayer {
+extension NetworkLayer: AuthNetworkProtocol {
     func signIn(by uuid: String) -> Single<UserCredentials> {
         return sendRequest(provider: authProvider, target: AuthEndPoints.login(uuid: uuid))
     }
