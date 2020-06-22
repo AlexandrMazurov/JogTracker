@@ -22,9 +22,8 @@ class LoginNavigationCoordinator: BaseNavigationCoordinator {
         
         switch navState {
         case .toJogs:
-            print("toJogs")
+            self.push(JogsViewController.self)
         }
-        //TODO: implement navigation
     }
     
     override func movingBack() {

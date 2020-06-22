@@ -21,10 +21,9 @@ class JogsNavigationCoordinator: BaseNavigationCoordinator {
         }
         switch navState {
         case .toStatistic:
-            print("toStatistic")
+            self.push(StatisticViewController.self)
         case .toFeedback:
-            print("toFeedback")
+            self.push(FeedbackViewController.self)
         }
-        //TODO: implement navigation
     }
 }

@@ -22,13 +22,14 @@ class RootNavigationCoordinator: BaseNavigationCoordinator {
         
         switch navState {
         case .toLogin:
-            print("toLogin")
+            self.showFlow(LoginViewController.self)
         case .toLogout:
-            print("toLogout")
+            if let presented = rootViewController.presentedViewController {
+                presented.dismiss(animated: true)
+            }
         case .toJogs:
-            print("toJogs")
+            self.showFlow(JogsViewController.self)
         }
-        //TODO: implement navigation
     }
     
     override func movingBack() {

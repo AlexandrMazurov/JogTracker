@@ -22,6 +22,48 @@ class BaseNavigationCoordinator: NavigationCoordinatorProtocol {
     func next(_ command: Any?) {}
     func movingBack() {}
     
+    func present(_ root: BaseViewController) {
+        childCoordinator = root.coordinator
+        let controller: UIViewController = root.navigationController ?? root
+        controller.modalPresentationStyle = .fullScreen
+        rootViewController.present(controller, animated: true)
+    }
+
+    func push<T>(_ type: T.Type, argument: Any? = nil) where T: BaseViewController {
+
+        let controller = argument != nil ?
+            registry.container.resolve(type.self, argument: argument) :
+            registry.container.resolve(type.self)
+        guard let baseController = controller
+        else {
+            print("Couldn't resolve \(type) ")
+            return
+        }
+
+        guard let navController = rootViewController as? UINavigationController
+        else {
+            print("Couldn't resolve root controller as UINaviationController")
+            return
+        }
+        DispatchQueue.main.async {
+            navController.pushViewController(baseController, animated: true)
+        }
+    }
 }
     
+extension BaseNavigationCoordinator {
+    func showFlow<T>(_ type: T.Type, argument: Any? = nil) where T: BaseViewController {
 
+        let controller = argument != nil ?
+            registry.container.resolve(type.self, argument: argument) :
+            registry.container.resolve(type.self)
+        guard let baseController = controller
+        else {
+            print("Couldn't resolve \(type) ")
+            return
+        }
+        DispatchQueue.main.async {
+            self.present(baseController)
+        }
+    }
+}
