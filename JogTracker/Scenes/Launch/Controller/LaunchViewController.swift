@@ -31,7 +31,7 @@ class LaunchViewController: BaseViewController {
             return
         }
         
-        let navigation = isAuthenticated ? RootNavigationState.toJogs : RootNavigationState.toLogin
+        let navigation: RootNavigationState = isAuthenticated ? .toJogs : .toLogin
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.coordinator?.next(navigation)
         }
