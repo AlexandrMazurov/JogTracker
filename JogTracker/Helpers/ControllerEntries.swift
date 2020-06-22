@@ -13,7 +13,7 @@ enum Storyboard: String {
     case feedback = "FeedbackViewController"
     case statistic = "StatisticViewController"
     case jogs = "JogsViewController"
-    case launch = "LaunchViewController"
+    case launch = "Main"
 
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: nil)

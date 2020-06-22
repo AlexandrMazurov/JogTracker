@@ -31,13 +31,11 @@
 		1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B4249FECDF0037111B /* FeedbackViewController.storyboard */; };
 		1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */; };
 		1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461B8249FECFF0037111B /* JogsViewController.storyboard */; };
-		1F3461BB249FED110037111B /* LaunchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3461BA249FED110037111B /* LaunchViewController.storyboard */; };
 		1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461BC249FED300037111B /* ControllerEntries.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
 		1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA861249FA35C002D0056 /* SceneDelegate.swift */; };
-		1F4BA864249FA35C002D0056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA863249FA35C002D0056 /* ViewController.swift */; };
 		1F4BA867249FA35C002D0056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA865249FA35C002D0056 /* Main.storyboard */; };
 		1F4BA869249FA35F002D0056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA868249FA35F002D0056 /* Assets.xcassets */; };
 		1F4BA86C249FA35F002D0056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA86A249FA35F002D0056 /* LaunchScreen.storyboard */; };
@@ -70,14 +68,12 @@
 		1F3461B4249FECDF0037111B /* FeedbackViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedbackViewController.storyboard; sourceTree = "<group>"; };
 		1F3461B6249FECEF0037111B /* StatisticViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatisticViewController.storyboard; sourceTree = "<group>"; };
 		1F3461B8249FECFF0037111B /* JogsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JogsViewController.storyboard; sourceTree = "<group>"; };
-		1F3461BA249FED110037111B /* LaunchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchViewController.storyboard; sourceTree = "<group>"; };
 		1F3461BC249FED300037111B /* ControllerEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerEntries.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4BA85F249FA35C002D0056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F4BA861249FA35C002D0056 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1F4BA863249FA35C002D0056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4BA866249FA35C002D0056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F4BA868249FA35F002D0056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F4BA86B249FA35F002D0056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,7 +125,6 @@
 			children = (
 				1F34619B249FE8D00037111B /* Controller */,
 				1F34619A249FE8CE0037111B /* ViewModel */,
-				1F3461BA249FED110037111B /* LaunchViewController.storyboard */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -309,7 +304,6 @@
 				1F4B2977249FBFA0009EB6DD /* DI */,
 				1F346175249FC9220037111B /* Navigation */,
 				1F346180249FD6260037111B /* Scenes */,
-				1F4BA863249FA35C002D0056 /* ViewController.swift */,
 				1F4BA865249FA35C002D0056 /* Main.storyboard */,
 				1F4BA868249FA35F002D0056 /* Assets.xcassets */,
 				1F4BA86A249FA35F002D0056 /* LaunchScreen.storyboard */,
@@ -395,7 +389,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F3461BB249FED110037111B /* LaunchViewController.storyboard in Resources */,
 				1F4BA86C249FA35F002D0056 /* LaunchScreen.storyboard in Resources */,
 				1F3461B3249FECC00037111B /* LoginViewController.storyboard in Resources */,
 				1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */,
@@ -455,7 +448,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4BA864249FA35C002D0056 /* ViewController.swift in Sources */,
 				1F34618E249FDAA20037111B /* View-Layout.swift in Sources */,
 				1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */,
 				1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */,
