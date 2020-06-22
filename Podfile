@@ -14,5 +14,8 @@ target 'JogTracker' do
   # RX
     pod 'RxSwift'
     pod 'RxCocoa'
+	
+  # RxSwift 3rd libs
+    pod 'Moya/RxSwift'
 
 end
