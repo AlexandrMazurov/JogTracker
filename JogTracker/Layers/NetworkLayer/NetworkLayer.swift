@@ -30,9 +30,13 @@ enum NetworkError: LocalizedError {
     }
 }
 
-class NetwotkLayer {
-    
+class NetworkLayer {
+    private(set) var authProvider: MoyaProvider<AuthEndPoints>
     var authError = PublishSubject<NetworkError>()
+    
+    init() {
+        authProvider = MoyaProvider<AuthEndPoints>(plugins: [])
+    }
     
     func sendRequest<T: Decodable, U: TargetType>(provider: MoyaProvider<U>, target: U) -> Single<T> {
         return provider.rx
