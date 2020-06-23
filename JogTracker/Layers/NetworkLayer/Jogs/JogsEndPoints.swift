@@ -21,11 +21,10 @@ extension JogsEndPoints: TargetType {
     
     var path: String {
         switch self {
-            
         case .jogs:
             return "/data/sync"
         case .createJog, .editJog:
-            return "data/jog"
+            return "/data/jog"
         }
     }
     
@@ -47,19 +46,20 @@ extension JogsEndPoints: TargetType {
     var task: Task {
         switch self {
         case .jogs(let token):
-            return .requestParameters(parameters: ["access_token": token], encoding: JSONEncoding.default)
+            return .requestParameters(parameters: ["access_token": token], encoding: URLEncoding.default)
         case .createJog(let jog, let token):
+
             return .requestParameters(parameters: ["access_token": token,
-                                                   "date": jog.date,
+                                                   "date": jog.date.timeIntervalSinceReferenceDate.description,
                                                    "distance": jog.distance,
                                                    "time": jog.time],
                                       encoding: JSONEncoding.default)
         case .editJog(let jog, let token):
             return .requestParameters(parameters: ["access_token": token,
-                                                   "date" : jog.date,
+                                                   "date" : jog.date.timeIntervalSinceReferenceDate.description,
                                                    "distance": jog.distance,
                                                    "time": jog.time,
-                                                   "id": jog.id ?? "",
+                                                   "jog_id": jog.id ?? "",
                                                    "user_id": jog.userId ?? ""],
                                       encoding: JSONEncoding.default)
         }
@@ -70,5 +70,9 @@ extension JogsEndPoints: TargetType {
         case .jogs, .createJog, .editJog:
             return ["Content-Type": "application/json"]
         }
+    }
+    
+    public var validationType: ValidationType {
+        return .successCodes
     }
 }

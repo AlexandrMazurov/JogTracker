@@ -34,6 +34,18 @@ struct Jog: Decodable {
         case date = "date"
     }
     
+    init(id: Int?,
+         userId: String?,
+         distance: Float,
+         time: Float,
+         date: Date) {
+        self.id = id
+        self.userId = userId
+        self.distance = distance
+        self.time = time
+        self.date = date
+    }
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)

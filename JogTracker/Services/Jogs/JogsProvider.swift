@@ -25,7 +25,6 @@ class JogsProvider: JogsProviderProtocol {
             }
             let disposable = network.jogs()
                 .subscribe(onSuccess: { data in
-                    print(data.response)
                     single(SingleEvent.success(data.response.jogs))
                 }, onError: { error in
                     single(SingleEvent.error(error))
@@ -42,7 +41,6 @@ class JogsProvider: JogsProviderProtocol {
             }
             let disposable = network.createJog(jog: jog)
                 .subscribe(onSuccess: { data in
-                    print(data.response)
                     single(SingleEvent.success(true))
                 }, onError: { error in
                     single(SingleEvent.error(error))
@@ -59,7 +57,6 @@ class JogsProvider: JogsProviderProtocol {
             }
             let disposable = network.editJog(jog: jog)
                 .subscribe(onSuccess: { data in
-                    print(data.response)
                     single(SingleEvent.success(true))
                 }, onError: { error in
                     single(SingleEvent.error(error))
