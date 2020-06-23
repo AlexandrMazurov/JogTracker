@@ -41,6 +41,11 @@
 		1F3461D624A1021D0037111B /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D524A1021D0037111B /* AuthServiceProtocol.swift */; };
 		1F3461D824A1022E0037111B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D724A1022E0037111B /* AuthService.swift */; };
 		1F3461DA24A108750037111B /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D924A108750037111B /* AppPreferences.swift */; };
+		1F3EB2BD24A1DE0700DFBF6E /* JogsEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2BC24A1DE0700DFBF6E /* JogsEndPoints.swift */; };
+		1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2BE24A1E18900DFBF6E /* Jog.swift */; };
+		1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C024A1EC5800DFBF6E /* NetworkLayer+Jogs.swift */; };
+		1F3EB2C324A1F5CC00DFBF6E /* CreateJogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */; };
+		1F3EB2C524A1F75300DFBF6E /* JogsNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C424A1F75300DFBF6E /* JogsNetworkProtocol.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -87,6 +92,11 @@
 		1F3461D524A1021D0037111B /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		1F3461D724A1022E0037111B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1F3461D924A108750037111B /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		1F3EB2BC24A1DE0700DFBF6E /* JogsEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsEndPoints.swift; sourceTree = "<group>"; };
+		1F3EB2BE24A1E18900DFBF6E /* Jog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
+		1F3EB2C024A1EC5800DFBF6E /* NetworkLayer+Jogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLayer+Jogs.swift"; sourceTree = "<group>"; };
+		1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateJogResponse.swift; sourceTree = "<group>"; };
+		1F3EB2C424A1F75300DFBF6E /* JogsNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsNetworkProtocol.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,6 +301,7 @@
 		1F3461BF24A0EF470037111B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EB2BB24A1DDB400DFBF6E /* Jogs */,
 				1F3461C024A0EF5F0037111B /* Auth */,
 				1F3461C124A0EF740037111B /* NetworkLayer.swift */,
 			);
@@ -319,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				1F3461CB24A0FC4A0037111B /* UserCredentials.swift */,
+				1F3EB2BE24A1E18900DFBF6E /* Jog.swift */,
+				1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,6 +351,16 @@
 				1F3461D724A1022E0037111B /* AuthService.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1F3EB2BB24A1DDB400DFBF6E /* Jogs */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EB2BC24A1DE0700DFBF6E /* JogsEndPoints.swift */,
+				1F3EB2C024A1EC5800DFBF6E /* NetworkLayer+Jogs.swift */,
+				1F3EB2C424A1F75300DFBF6E /* JogsNetworkProtocol.swift */,
+			);
+			path = Jogs;
 			sourceTree = "<group>";
 		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
@@ -535,10 +558,13 @@
 				1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */,
 				1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */,
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
+				1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
+				1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */,
 				1F3461AB249FE9620037111B /* FeedbackViewModel.swift in Sources */,
 				1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */,
 				1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */,
+				1F3EB2C524A1F75300DFBF6E /* JogsNetworkProtocol.swift in Sources */,
 				1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */,
 				1F3461D624A1021D0037111B /* AuthServiceProtocol.swift in Sources */,
 				1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */,
@@ -546,6 +572,7 @@
 				1F3461C624A0F84C0037111B /* AppConstants.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F3461C424A0F7EF0037111B /* AuthEndPoints.swift in Sources */,
+				1F3EB2C324A1F5CC00DFBF6E /* CreateJogResponse.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
 				1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */,
 				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
@@ -553,6 +580,7 @@
 				1F3461C824A0FBC80037111B /* AuthNetworkProtocol.swift in Sources */,
 				1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
+				1F3EB2BD24A1DE0700DFBF6E /* JogsEndPoints.swift in Sources */,
 				1F3461DA24A108750037111B /* AppPreferences.swift in Sources */,
 				1F34619F249FE9060037111B /* LoginViewController.swift in Sources */,
 				1F346192249FDDD10037111B /* Error+Description.swift in Sources */,

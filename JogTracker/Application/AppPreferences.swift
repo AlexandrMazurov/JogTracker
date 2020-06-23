@@ -10,6 +10,7 @@ import Foundation
 
 fileprivate enum Constants {
     static let userTokenKey = "userTokenKey"
+    static let userTokenTypeKey = "userTokenTypeKey"
 }
 
 final class AppPreferences {
@@ -18,13 +19,19 @@ final class AppPreferences {
     
     var userToken: String? {
         get {
-            guard let token = defaults.string(forKey: Constants.userTokenKey) else {
-                return nil
-            }
-            return token
+            return defaults.string(forKey: Constants.userTokenKey)
         }
         set {
             defaults.set(newValue, forKey: Constants.userTokenKey)
+        }
+    }
+    
+    var userTokenType: String? {
+        get {
+            return defaults.string(forKey: Constants.userTokenTypeKey)
+        }
+        set {
+            defaults.set(newValue, forKey: Constants.userTokenTypeKey)
         }
     }
     

@@ -33,6 +33,7 @@ public class AuthenticationService: AuthServiceProtocol {
             let disposable = network.signIn(by: uuid)
                 .subscribe(onSuccess: { loginResponse in
                     self?.preferences?.userToken = loginResponse.response.accessToken
+                    self?.preferences?.userTokenType = loginResponse.response.tokenType
                     self?.isAuthenticated.accept(true)
                     single(SingleEvent.success(true))
                 }, onError: { error in
@@ -44,6 +45,7 @@ public class AuthenticationService: AuthServiceProtocol {
     
     func signOut() {
         preferences?.userToken = nil
+        preferences?.userTokenType = nil
         isAuthenticated.accept(false)
     }
     

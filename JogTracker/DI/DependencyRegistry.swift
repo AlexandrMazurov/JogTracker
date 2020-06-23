@@ -47,8 +47,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
             AppPreferences()
         }.inObjectScope(.container)
         
-        container.register(NetworkLayer.self) {_ in
-            NetworkLayer()
+        container.register(NetworkLayer.self) {
+            NetworkLayer(preferences: $0.resolve(AppPreferences.self))
         }.inObjectScope(.container)
         
         container.register(AuthServiceProtocol.self) {
