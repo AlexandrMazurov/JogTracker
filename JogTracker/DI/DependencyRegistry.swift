@@ -55,6 +55,10 @@ class DependencyRegistry: DependencyRegistryProtocol {
             AuthenticationService(authApi: $0.resolve(NetworkLayer.self),
                                   preferences: $0.resolve(AppPreferences.self))
         }.inObjectScope(.container)
+        
+        container.register(JogsProviderProtocol.self) {
+            JogsProvider(network: $0.resolve(NetworkLayer.self))
+        }.inObjectScope(.container)
     }
     
     private func registerViewModels() {

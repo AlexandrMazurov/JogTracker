@@ -13,7 +13,7 @@ class JogsProvider: JogsProviderProtocol {
     
     private let network: JogsNetworkProtocol?
     
-    init(network: JogsNetworkProtocol) {
+    init(network: JogsNetworkProtocol?) {
         self.network = network
     }
 
@@ -67,6 +67,4 @@ class JogsProvider: JogsProviderProtocol {
             return Disposables.create([disposable])
         }
     }
-    
-    
 }

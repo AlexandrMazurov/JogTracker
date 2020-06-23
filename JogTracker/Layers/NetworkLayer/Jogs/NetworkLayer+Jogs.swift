@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import Moya
 
-extension NetworkLayer {
+extension NetworkLayer: JogsNetworkProtocol {
 
     func jogs() -> Single<GetJogsResponse> {
         return sendRequest(provider: jogsProvider, target: JogsEndPoints.jogs(token: preferences?.userToken ?? ""))
