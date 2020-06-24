@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,18 +19,39 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-Yr-VcK">
+                                <rect key="frame" x="0.0" y="44" width="250" height="852"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sJE-83-kLk">
+                                        <rect key="frame" x="0.0" y="30" width="250" height="822"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.066901967005076113" green="0.066901967005076113" blue="0.066901967005076113" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="2qm-a4-ddm"/>
+                                    <constraint firstAttribute="bottom" secondItem="sJE-83-kLk" secondAttribute="bottom" id="AzS-LR-Mpz"/>
+                                    <constraint firstAttribute="trailing" secondItem="sJE-83-kLk" secondAttribute="trailing" id="KHR-46-J0N"/>
+                                    <constraint firstItem="sJE-83-kLk" firstAttribute="top" secondItem="RAC-Yr-VcK" secondAttribute="top" constant="30" id="mbs-M5-a4b"/>
+                                    <constraint firstItem="sJE-83-kLk" firstAttribute="leading" secondItem="RAC-Yr-VcK" secondAttribute="leading" id="nAU-kh-YtT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3ln-OD-lUI" firstAttribute="trailing" secondItem="rYr-Ab-Nqp" secondAttribute="trailing" id="0of-Cm-zed"/>
                             <constraint firstItem="3ln-OD-lUI" firstAttribute="leading" secondItem="rYr-Ab-Nqp" secondAttribute="leading" id="Auh-T3-hks"/>
+                            <constraint firstItem="RAC-Yr-VcK" firstAttribute="leading" secondItem="rYr-Ab-Nqp" secondAttribute="leading" id="Fbu-13-oad"/>
                             <constraint firstItem="3ln-OD-lUI" firstAttribute="top" secondItem="rYr-Ab-Nqp" secondAttribute="top" id="GGq-yI-MVC"/>
+                            <constraint firstAttribute="bottom" secondItem="RAC-Yr-VcK" secondAttribute="bottom" id="TlM-uu-0c6"/>
+                            <constraint firstItem="RAC-Yr-VcK" firstAttribute="top" secondItem="rYr-Ab-Nqp" secondAttribute="top" id="Y9j-2M-2u9"/>
                             <constraint firstAttribute="bottom" secondItem="3ln-OD-lUI" secondAttribute="bottom" id="sAd-Si-cim"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rYr-Ab-Nqp"/>
                     </view>
                     <connections>
                         <outlet property="jogsTableView" destination="3ln-OD-lUI" id="p9J-1T-q8X"/>
+                        <outlet property="menuTableView" destination="sJE-83-kLk" id="dVi-Zh-niO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgd-s5-QhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

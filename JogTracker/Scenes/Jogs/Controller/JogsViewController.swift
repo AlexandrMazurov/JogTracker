@@ -11,6 +11,7 @@ import RxCocoa
 
 private enum Constants {
     static let jogCellHeight: CGFloat = 130
+    static let menuCellHeight: CGFloat = 50
     static let runLogoName = "runLogo"
     static let menuIconName = "menuIcon"
 }
@@ -18,7 +19,8 @@ private enum Constants {
 class JogsViewController: BaseViewController {
     
     
-    @IBOutlet weak var jogsTableView: UITableView!
+    @IBOutlet private weak var jogsTableView: UITableView!
+    @IBOutlet private weak var menuTableView: UITableView!
     
     private var loginViewModel: JogsViewModel? {
         return viewModel as? JogsViewModel
@@ -26,6 +28,8 @@ class JogsViewController: BaseViewController {
     
     override func viewDidLoad() {
         configureNavigationBar()
+        self.jogsTableView.rowHeight = Constants.jogCellHeight
+        self.menuTableView.rowHeight = Constants.menuCellHeight
         super.viewDidLoad()
     }
     
@@ -34,6 +38,7 @@ class JogsViewController: BaseViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.barTintColor = .darkText
         self.navigationController?.navigationBar.barStyle = .black
+                                
         
     }
     
@@ -66,6 +71,24 @@ class JogsViewController: BaseViewController {
             }
         .disposed(by: rxBag)
         
+        menuTableView.rx
+            .setDelegate(self)
+            .disposed(by: rxBag)
+        
+        menuTableView.register(UINib(nibName: MenuCell.reuseIdentifier, bundle: Bundle.main),
+                               forCellReuseIdentifier: MenuCell.reuseIdentifier)
+        
+        viewModel.menuViewData
+            .bind(to: menuTableView
+                .rx
+                .items(cellIdentifier: MenuCell.reuseIdentifier,
+                       cellType: MenuCell.self)) { row, menu, cell in
+                        cell.configure(with: menu)
+            }
+        .disposed(by: rxBag)
+        
+        
+        
         self.rx
             .viewWillAppear
             .map { _ in Void() }
@@ -90,7 +113,7 @@ class JogsViewController: BaseViewController {
 
 extension JogsViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants.jogCellHeight
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return Constants.jogCellHeight
+//    }
 }

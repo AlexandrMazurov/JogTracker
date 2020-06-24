@@ -41,6 +41,9 @@
 		1F3461D624A1021D0037111B /* AuthServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D524A1021D0037111B /* AuthServiceProtocol.swift */; };
 		1F3461D824A1022E0037111B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D724A1022E0037111B /* AuthService.swift */; };
 		1F3461DA24A108750037111B /* AppPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3461D924A108750037111B /* AppPreferences.swift */; };
+		1F3933ED24A3AF1F00A900FA /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3933EC24A3AF1F00A900FA /* MenuCell.swift */; };
+		1F3933EF24A3AF2E00A900FA /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3933EE24A3AF2E00A900FA /* MenuCell.xib */; };
+		1F3933F224A3B1BE00A900FA /* MenuViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3933F124A3B1BE00A900FA /* MenuViewData.swift */; };
 		1F3EB2BD24A1DE0700DFBF6E /* JogsEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2BC24A1DE0700DFBF6E /* JogsEndPoints.swift */; };
 		1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2BE24A1E18900DFBF6E /* Jog.swift */; };
 		1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C024A1EC5800DFBF6E /* NetworkLayer+Jogs.swift */; };
@@ -103,6 +106,9 @@
 		1F3461D524A1021D0037111B /* AuthServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServiceProtocol.swift; sourceTree = "<group>"; };
 		1F3461D724A1022E0037111B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1F3461D924A108750037111B /* AppPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPreferences.swift; sourceTree = "<group>"; };
+		1F3933EC24A3AF1F00A900FA /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		1F3933EE24A3AF2E00A900FA /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		1F3933F124A3B1BE00A900FA /* MenuViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewData.swift; sourceTree = "<group>"; };
 		1F3EB2BC24A1DE0700DFBF6E /* JogsEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsEndPoints.swift; sourceTree = "<group>"; };
 		1F3EB2BE24A1E18900DFBF6E /* Jog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jog.swift; sourceTree = "<group>"; };
 		1F3EB2C024A1EC5800DFBF6E /* NetworkLayer+Jogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLayer+Jogs.swift"; sourceTree = "<group>"; };
@@ -275,7 +281,8 @@
 		1F346199249FE8CB0037111B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F62313F24A38546009001CB /* JogCell */,
+				1F3933F024A3B1A500A900FA /* Common */,
+				1F3933EA24A3AEF800A900FA /* Cells */,
 				1F3461A4249FE9360037111B /* JogsViewController.swift */,
 			);
 			path = Controller;
@@ -379,6 +386,32 @@
 				1F3461D724A1022E0037111B /* AuthService.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1F3933EA24A3AEF800A900FA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F3933EB24A3AF0400A900FA /* MenuCell */,
+				1F62313F24A38546009001CB /* JogCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1F3933EB24A3AF0400A900FA /* MenuCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F3933EC24A3AF1F00A900FA /* MenuCell.swift */,
+				1F3933EE24A3AF2E00A900FA /* MenuCell.xib */,
+			);
+			path = MenuCell;
+			sourceTree = "<group>";
+		};
+		1F3933F024A3B1A500A900FA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1F3933F124A3B1BE00A900FA /* MenuViewData.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		1F3EB2BB24A1DDB400DFBF6E /* Jogs */ = {
@@ -571,6 +604,7 @@
 				1F4BA86C249FA35F002D0056 /* LaunchScreen.storyboard in Resources */,
 				1F3461B3249FECC00037111B /* LoginViewController.storyboard in Resources */,
 				1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */,
+				1F3933EF24A3AF2E00A900FA /* MenuCell.xib in Resources */,
 				1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */,
 				1F62314324A38574009001CB /* JogCell.xib in Resources */,
 				1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */,
@@ -663,6 +697,7 @@
 				1F3461C824A0FBC80037111B /* AuthNetworkProtocol.swift in Sources */,
 				1F62314624A38A80009001CB /* ReusableView.swift in Sources */,
 				1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */,
+				1F3933F224A3B1BE00A900FA /* MenuViewData.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
 				1F3EB2BD24A1DE0700DFBF6E /* JogsEndPoints.swift in Sources */,
 				1F3461DA24A108750037111B /* AppPreferences.swift in Sources */,
@@ -674,6 +709,7 @@
 				1F3461D824A1022E0037111B /* AuthService.swift in Sources */,
 				1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */,
 				1F3461AF249FE9760037111B /* JogsViewModel.swift in Sources */,
+				1F3933ED24A3AF1F00A900FA /* MenuCell.swift in Sources */,
 				1F34617D249FCC9E0037111B /* LoginNavigationCoordinator.swift in Sources */,
 				1F3461A9249FE9580037111B /* LoginViewModel.swift in Sources */,
 				1F3461CC24A0FC4A0037111B /* UserCredentials.swift in Sources */,

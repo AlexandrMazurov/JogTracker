@@ -9,9 +9,18 @@
 import RxSwift
 import RxCocoa
 
+private enum Constants {
+    static let statistikMenuName = "Statistic"
+    static let feedbackMenuName = "Feedback"
+    static let statisticMenuIconName = "statisticMenuIcon"
+    static let feedbackMenuIconName = "feedbackMenuIcon"
+    
+}
+
 class JogsViewModel: BaseViewModel {
     
     let jogsViewData = BehaviorRelay<[Jog]>(value: [])
+    let menuViewData = BehaviorRelay<[MenuViewData]>(value: [])
     private weak var jogsProvider: JogsProviderProtocol?
     
     init(jogsProvider: JogsProviderProtocol?) {
@@ -20,6 +29,7 @@ class JogsViewModel: BaseViewModel {
     
     override func setup() {
         super.setup()
+        configureMenu()
     }
     
     override func createObservers() {
@@ -36,5 +46,12 @@ class JogsViewModel: BaseViewModel {
                 self?.inProgress.onNext(.error(error))
             })
             .disposed(by: rxBag)
+    }
+    
+    private func configureMenu() {
+        menuViewData.accept([
+            MenuViewData(name: Constants.statistikMenuName, imageName: Constants.statisticMenuIconName),
+            MenuViewData(name: Constants.feedbackMenuName, imageName: Constants.feedbackMenuIconName)
+        ])
     }
 }
