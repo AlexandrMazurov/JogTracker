@@ -61,6 +61,9 @@
 		1F4BA867249FA35C002D0056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA865249FA35C002D0056 /* Main.storyboard */; };
 		1F4BA869249FA35F002D0056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA868249FA35F002D0056 /* Assets.xcassets */; };
 		1F4BA86C249FA35F002D0056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4BA86A249FA35F002D0056 /* LaunchScreen.storyboard */; };
+		1F62314124A38568009001CB /* JogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62314024A38568009001CB /* JogCell.swift */; };
+		1F62314324A38574009001CB /* JogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F62314224A38574009001CB /* JogCell.xib */; };
+		1F62314624A38A80009001CB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62314524A38A80009001CB /* ReusableView.swift */; };
 		6BD103CA5AC9EF6D720CC56B /* Pods_JogTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +125,9 @@
 		1F4BA868249FA35F002D0056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F4BA86B249FA35F002D0056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F4BA86D249FA35F002D0056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F62314024A38568009001CB /* JogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogCell.swift; sourceTree = "<group>"; };
+		1F62314224A38574009001CB /* JogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogCell.xib; sourceTree = "<group>"; };
+		1F62314524A38A80009001CB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692A92CFD9D74A06B7E342B4 /* Pods-JogTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTracker.release.xcconfig"; path = "Target Support Files/Pods-JogTracker/Pods-JogTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +223,7 @@
 		1F34618C249FDA860037111B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1F62314424A38A6B009001CB /* Protocols */,
 				1F34618D249FDAA20037111B /* View-Layout.swift */,
 				1F34618F249FDD390037111B /* UIViewController+Alerts.swift */,
 				1F346191249FDDD10037111B /* Error+Description.swift */,
@@ -268,6 +275,7 @@
 		1F346199249FE8CB0037111B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1F62313F24A38546009001CB /* JogCell */,
 				1F3461A4249FE9360037111B /* JogsViewController.swift */,
 			);
 			path = Controller;
@@ -466,6 +474,23 @@
 			path = JogTracker;
 			sourceTree = "<group>";
 		};
+		1F62313F24A38546009001CB /* JogCell */ = {
+			isa = PBXGroup;
+			children = (
+				1F62314024A38568009001CB /* JogCell.swift */,
+				1F62314224A38574009001CB /* JogCell.xib */,
+			);
+			path = JogCell;
+			sourceTree = "<group>";
+		};
+		1F62314424A38A6B009001CB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1F62314524A38A80009001CB /* ReusableView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CDE8E17919A7747FF9B48621 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +572,7 @@
 				1F3461B3249FECC00037111B /* LoginViewController.storyboard in Resources */,
 				1F3461B7249FECEF0037111B /* StatisticViewController.storyboard in Resources */,
 				1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */,
+				1F62314324A38574009001CB /* JogCell.xib in Resources */,
 				1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */,
 				1F4BA869249FA35F002D0056 /* Assets.xcassets in Resources */,
 				1F4BA867249FA35C002D0056 /* Main.storyboard in Resources */,
@@ -610,6 +636,7 @@
 				1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */,
 				1F3EB2D324A336A500DFBF6E /* FeedbackResponse.swift in Sources */,
 				1F3EB2D624A3386200DFBF6E /* FeedbackProviderProtocol.swift in Sources */,
+				1F62314124A38568009001CB /* JogCell.swift in Sources */,
 				1F3EB2C824A1F8C400DFBF6E /* JogsProviderProtocol.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
 				1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */,
@@ -634,6 +661,7 @@
 				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F3461C824A0FBC80037111B /* AuthNetworkProtocol.swift in Sources */,
+				1F62314624A38A80009001CB /* ReusableView.swift in Sources */,
 				1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
 				1F3EB2BD24A1DE0700DFBF6E /* JogsEndPoints.swift in Sources */,
