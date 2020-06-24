@@ -59,6 +59,10 @@ class DependencyRegistry: DependencyRegistryProtocol {
         container.register(JogsProviderProtocol.self) {
             JogsProvider(network: $0.resolve(NetworkLayer.self))
         }.inObjectScope(.container)
+        
+        container.register(FeedbackProviderProtocol.self) {
+            FeedbackProvider(network: $0.resolve(NetworkLayer.self))
+        }.inObjectScope(.container)
     }
     
     private func registerViewModels() {
