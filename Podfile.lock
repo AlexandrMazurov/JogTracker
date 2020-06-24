@@ -14,6 +14,9 @@ PODS:
   - RxKeyboard (1.0.0):
     - RxCocoa (~> 5.0)
     - RxSwift (~> 5.0)
+  - RxOptional (4.1.0):
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
@@ -29,6 +32,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxGesture
   - RxKeyboard
+  - RxOptional
   - RxSwift
   - RxViewController
   - Swinject
@@ -41,6 +45,7 @@ SPEC REPOS:
     - RxCocoa
     - RxGesture
     - RxKeyboard
+    - RxOptional
     - RxRelay
     - RxSwift
     - RxViewController
@@ -53,12 +58,13 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
+  RxOptional: b1fcd60856807a564c0215c2184b8d33e7826dc2
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxViewController: 7330a46e5c31cd680db169da4c9fc8676e975a81
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: eb10feb2d362aa0955430426739e83f507bf0a46
+PODFILE CHECKSUM: 67a964c418db4cac20d4f940ab7830ad10ece69f
 
 COCOAPODS: 1.8.4

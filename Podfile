@@ -20,5 +20,6 @@ target 'JogTracker' do
     pod 'RxViewController'
     pod 'RxGesture'
     pod 'RxKeyboard'
+    pod 'RxOptional'
 
 end
