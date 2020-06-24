@@ -11,6 +11,8 @@ import RxCocoa
 
 private enum Constants {
     static let jogCellHeight: CGFloat = 130
+    static let runLogoName = "runLogo"
+    static let menuIconName = "menuIcon"
 }
 
 class JogsViewController: BaseViewController {
@@ -20,6 +22,24 @@ class JogsViewController: BaseViewController {
     
     private var loginViewModel: JogsViewModel? {
         return viewModel as? JogsViewModel
+    }
+    
+    override func viewDidLoad() {
+        configureNavigationBar()
+        super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.barTintColor = .darkText
+        self.navigationController?.navigationBar.barStyle = .black
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.setHidesBackButton(false, animated: true)
     }
     
     override func createObservers() {
@@ -42,7 +62,7 @@ class JogsViewController: BaseViewController {
                 .rx
                 .items(cellIdentifier: JogCell.reuseIdentifier,
                        cellType: JogCell.self)) { row, jog, cell in
-                        cell.configure(with: jog, cellImage: UIImage(named: "runLogo") ?? UIImage())
+                        cell.configure(with: jog, cellImage: UIImage(named: Constants.runLogoName))
             }
         .disposed(by: rxBag)
         
@@ -51,16 +71,20 @@ class JogsViewController: BaseViewController {
             .map { _ in Void() }
             .bind(onNext: viewModel.loadJogs)
             .disposed(by: rxBag)
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.setHidesBackButton(true, animated: true)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationItem.setHidesBackButton(false, animated: true)
+    func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.menuIconName),
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: nil)
+        navigationItem.leftBarButtonItem?.tintColor = .yellow
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                            target: self,
+                                                            action: nil)
+        navigationItem.leftBarButtonItem?.tintColor = .yellow
+        navigationItem.rightBarButtonItem?.tintColor = .yellow
     }
 }
 

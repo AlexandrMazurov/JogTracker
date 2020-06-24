@@ -23,7 +23,7 @@ class JogCell: UITableViewCell, ReusableView {
     @IBOutlet private weak var dateValueLabel: UILabel!
     @IBOutlet private weak var cellImageView: UIImageView!
     
-    func configure(with jog: Jog, cellImage: UIImage) {
+    func configure(with jog: Jog, cellImage: UIImage?) {
         distanceValueLabel.text = "\(Int(jog.distance)) \(Constants.distanceMetric)"
         timeValueLabel.text = "\(Int(jog.time)) \(Constants.timeMetric)"
         speedValueLabel.text = "\(Int(jog.speed.isNaN ? 0: jog.speed)) \(Constants.speedMetric)"
