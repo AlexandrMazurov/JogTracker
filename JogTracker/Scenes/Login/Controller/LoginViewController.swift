@@ -11,6 +11,10 @@ import RxCocoa
 
 class LoginViewController: BaseViewController {
     
+    @IBOutlet weak var uuidTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
     private var loginViewModel: BaseViewModel? {
         return viewModel as? LoginViewModel
     }
@@ -21,5 +25,15 @@ class LoginViewController: BaseViewController {
         guard let viewModel = loginViewModel else {
             return
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }

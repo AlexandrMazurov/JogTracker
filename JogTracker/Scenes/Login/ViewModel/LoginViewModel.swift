@@ -22,17 +22,6 @@ class LoginViewModel: BaseViewModel {
     }
     
     override func createObservers() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.doLogin()
-        }
-    }
-    
-    func doLogin() {
-        auth?.signIn(by: "hello").subscribe(onSuccess: { (isSucces) in
-            print(isSucces)
-        }, onError: { (error) in
-            print(error.localizedDescription)
-            })
-            .disposed(by: rxBag)
+
     }
 }
