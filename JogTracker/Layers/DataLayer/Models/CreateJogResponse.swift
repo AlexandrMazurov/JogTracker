@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias EditJogResponse = CreateJogResponse
+
 struct CreateJogResponse: Decodable {
     let response: JogResponse
 }

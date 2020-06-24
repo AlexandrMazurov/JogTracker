@@ -33,6 +33,7 @@ enum NetworkError: LocalizedError {
 class NetworkLayer {
     private(set) var authProvider: MoyaProvider<AuthEndPoints>
     private(set) var jogsProvider: MoyaProvider<JogsEndPoints>
+    private(set) var feedbackProvider: MoyaProvider<FeedbackEndPoints>
     var authError = PublishSubject<NetworkError>()
     weak var preferences: AppPreferences?
     
@@ -40,6 +41,7 @@ class NetworkLayer {
         self.preferences = preferences
         authProvider = MoyaProvider<AuthEndPoints>(plugins: [])
         jogsProvider = MoyaProvider<JogsEndPoints>(plugins: [])
+        feedbackProvider = MoyaProvider<FeedbackEndPoints>(plugins: [])
     }
     
     func sendRequest<T: Decodable, U: TargetType>(provider: MoyaProvider<U>, target: U) -> Single<T> {

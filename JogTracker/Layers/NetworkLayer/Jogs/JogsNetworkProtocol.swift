@@ -13,5 +13,5 @@ import Moya
 protocol JogsNetworkProtocol {
     func jogs() -> Single<GetJogsResponse>
     func createJog(jog: Jog) -> Single<CreateJogResponse>
-    func editJog(jog: Jog) -> Single<CreateJogResponse>
+    func editJog(jog: Jog) -> Single<EditJogResponse>
 }

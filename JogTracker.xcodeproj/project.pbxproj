@@ -48,6 +48,10 @@
 		1F3EB2C524A1F75300DFBF6E /* JogsNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C424A1F75300DFBF6E /* JogsNetworkProtocol.swift */; };
 		1F3EB2C824A1F8C400DFBF6E /* JogsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C724A1F8C400DFBF6E /* JogsProviderProtocol.swift */; };
 		1F3EB2CA24A1F8CD00DFBF6E /* JogsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2C924A1F8CD00DFBF6E /* JogsProvider.swift */; };
+		1F3EB2CD24A3336F00DFBF6E /* FeedbackEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2CC24A3336F00DFBF6E /* FeedbackEndPoints.swift */; };
+		1F3EB2CF24A3338500DFBF6E /* NetworkLayer+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */; };
+		1F3EB2D124A333A500DFBF6E /* FeedbackNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */; };
+		1F3EB2D324A336A500DFBF6E /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -101,6 +105,10 @@
 		1F3EB2C424A1F75300DFBF6E /* JogsNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsNetworkProtocol.swift; sourceTree = "<group>"; };
 		1F3EB2C724A1F8C400DFBF6E /* JogsProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsProviderProtocol.swift; sourceTree = "<group>"; };
 		1F3EB2C924A1F8CD00DFBF6E /* JogsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsProvider.swift; sourceTree = "<group>"; };
+		1F3EB2CC24A3336F00DFBF6E /* FeedbackEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackEndPoints.swift; sourceTree = "<group>"; };
+		1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLayer+Feedback.swift"; sourceTree = "<group>"; };
+		1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackNetworkProtocol.swift; sourceTree = "<group>"; };
+		1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +313,7 @@
 		1F3461BF24A0EF470037111B /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EB2CB24A3335200DFBF6E /* Feedback */,
 				1F3EB2BB24A1DDB400DFBF6E /* Jogs */,
 				1F3461C024A0EF5F0037111B /* Auth */,
 				1F3461C124A0EF740037111B /* NetworkLayer.swift */,
@@ -336,6 +345,7 @@
 				1F3461CB24A0FC4A0037111B /* UserCredentials.swift */,
 				1F3EB2BE24A1E18900DFBF6E /* Jog.swift */,
 				1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */,
+				1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -375,6 +385,16 @@
 				1F3EB2C924A1F8CD00DFBF6E /* JogsProvider.swift */,
 			);
 			path = Jogs;
+			sourceTree = "<group>";
+		};
+		1F3EB2CB24A3335200DFBF6E /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EB2CC24A3336F00DFBF6E /* FeedbackEndPoints.swift */,
+				1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */,
+				1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */,
+			);
+			path = Feedback;
 			sourceTree = "<group>";
 		};
 		1F4B2976249FB6BD009EB6DD /* Application */ = {
@@ -571,8 +591,10 @@
 				1F34618E249FDAA20037111B /* View-Layout.swift in Sources */,
 				1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */,
 				1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */,
+				1F3EB2CD24A3336F00DFBF6E /* FeedbackEndPoints.swift in Sources */,
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
 				1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */,
+				1F3EB2D324A336A500DFBF6E /* FeedbackResponse.swift in Sources */,
 				1F3EB2C824A1F8C400DFBF6E /* JogsProviderProtocol.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
 				1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */,
@@ -584,6 +606,8 @@
 				1F3461D624A1021D0037111B /* AuthServiceProtocol.swift in Sources */,
 				1F34618B249FD6980037111B /* BaseViewModel.swift in Sources */,
 				1F3EB2CA24A1F8CD00DFBF6E /* JogsProvider.swift in Sources */,
+				1F3EB2D124A333A500DFBF6E /* FeedbackNetworkProtocol.swift in Sources */,
+				1F3EB2CF24A3338500DFBF6E /* NetworkLayer+Feedback.swift in Sources */,
 				1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */,
 				1F3461C624A0F84C0037111B /* AppConstants.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
