@@ -52,6 +52,8 @@
 		1F3EB2CF24A3338500DFBF6E /* NetworkLayer+Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */; };
 		1F3EB2D124A333A500DFBF6E /* FeedbackNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */; };
 		1F3EB2D324A336A500DFBF6E /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */; };
+		1F3EB2D624A3386200DFBF6E /* FeedbackProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D524A3386200DFBF6E /* FeedbackProviderProtocol.swift */; };
+		1F3EB2D824A3386C00DFBF6E /* FeedbackProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EB2D724A3386C00DFBF6E /* FeedbackProvider.swift */; };
 		1F4B2979249FBFBB009EB6DD /* DependencyRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */; };
 		1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */; };
 		1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4BA85F249FA35C002D0056 /* AppDelegate.swift */; };
@@ -109,6 +111,8 @@
 		1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLayer+Feedback.swift"; sourceTree = "<group>"; };
 		1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackNetworkProtocol.swift; sourceTree = "<group>"; };
 		1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
+		1F3EB2D524A3386200DFBF6E /* FeedbackProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackProviderProtocol.swift; sourceTree = "<group>"; };
+		1F3EB2D724A3386C00DFBF6E /* FeedbackProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackProvider.swift; sourceTree = "<group>"; };
 		1F4B2978249FBFBB009EB6DD /* DependencyRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRegistry.swift; sourceTree = "<group>"; };
 		1F4B297A249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwinjectStoryboard+Setup.swift"; sourceTree = "<group>"; };
 		1F4BA85C249FA35C002D0056 /* JogTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JogTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,6 +357,7 @@
 		1F3461CF24A101630037111B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EB2D424A3384900DFBF6E /* Feedback */,
 				1F3EB2C624A1F8B200DFBF6E /* Jogs */,
 				1F3461D424A102080037111B /* Authentication */,
 			);
@@ -393,6 +398,15 @@
 				1F3EB2CC24A3336F00DFBF6E /* FeedbackEndPoints.swift */,
 				1F3EB2CE24A3338500DFBF6E /* NetworkLayer+Feedback.swift */,
 				1F3EB2D024A333A500DFBF6E /* FeedbackNetworkProtocol.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		1F3EB2D424A3384900DFBF6E /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EB2D524A3386200DFBF6E /* FeedbackProviderProtocol.swift */,
+				1F3EB2D724A3386C00DFBF6E /* FeedbackProvider.swift */,
 			);
 			path = Feedback;
 			sourceTree = "<group>";
@@ -595,6 +609,7 @@
 				1F34617B249FCB260037111B /* JogsNavigationCoordinator.swift in Sources */,
 				1F3EB2BF24A1E18900DFBF6E /* Jog.swift in Sources */,
 				1F3EB2D324A336A500DFBF6E /* FeedbackResponse.swift in Sources */,
+				1F3EB2D624A3386200DFBF6E /* FeedbackProviderProtocol.swift in Sources */,
 				1F3EB2C824A1F8C400DFBF6E /* JogsProviderProtocol.swift in Sources */,
 				1F346189249FD68E0037111B /* BaseViewController.swift in Sources */,
 				1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */,
@@ -615,6 +630,7 @@
 				1F3EB2C324A1F5CC00DFBF6E /* CreateJogResponse.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
 				1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */,
+				1F3EB2D824A3386C00DFBF6E /* FeedbackProvider.swift in Sources */,
 				1F3461A7249FE9450037111B /* LaunchViewController.swift in Sources */,
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F3461C824A0FBC80037111B /* AuthNetworkProtocol.swift in Sources */,
