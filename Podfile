@@ -19,5 +19,6 @@ target 'JogTracker' do
     pod 'Moya/RxSwift'
     pod 'RxViewController'
     pod 'RxGesture'
+    pod 'RxKeyboard'
 
 end
