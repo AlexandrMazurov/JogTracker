@@ -17,16 +17,16 @@ private enum Constants {
 
 class JogCell: UITableViewCell, ReusableView {
 
-    @IBOutlet weak var distanceValueLabel: UILabel!
-    @IBOutlet weak var timeValueLabel: UILabel!
-    @IBOutlet weak var speedValueLabel: UILabel!
-    @IBOutlet weak var dateValueLabel: UILabel!
-    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet private weak var distanceValueLabel: UILabel!
+    @IBOutlet private weak var timeValueLabel: UILabel!
+    @IBOutlet private weak var speedValueLabel: UILabel!
+    @IBOutlet private weak var dateValueLabel: UILabel!
+    @IBOutlet private weak var cellImageView: UIImageView!
     
     func configure(with jog: Jog, cellImage: UIImage) {
         distanceValueLabel.text = "\(Int(jog.distance)) \(Constants.distanceMetric)"
         timeValueLabel.text = "\(Int(jog.time)) \(Constants.timeMetric)"
-        speedValueLabel.text = "\(Int(jog.speed)) \(Constants.speedMetric)"
+        speedValueLabel.text = "\(Int(jog.speed.isNaN ? 0: jog.speed)) \(Constants.speedMetric)"
         dateValueLabel.text = dateStringFormat(from: jog.date)
         self.cellImageView.image = cellImage
         cellImageView.layer.cornerRadius = cellImageView.frame.width / Constants.fromDiagonalToRadiusDevider

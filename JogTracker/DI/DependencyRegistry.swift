@@ -82,8 +82,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
             StatisticViewModel()
         }
         
-        container.register(JogsViewModel.self) { _ in
-            JogsViewModel()
+        container.register(JogsViewModel.self) {
+            JogsViewModel(jogsProvider: $0.resolve(JogsProviderProtocol.self))
         }
     }
     
