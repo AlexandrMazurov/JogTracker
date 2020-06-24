@@ -10,7 +10,7 @@ import Foundation
 import Moya
 
 enum FeedbackEndPoints {
-    case sendFeedback(topicId: Int, text: String)
+    case sendFeedback(topicId: Int, text: String, token: String)
 }
 
 extension FeedbackEndPoints: TargetType {
@@ -39,8 +39,8 @@ extension FeedbackEndPoints: TargetType {
     
     var task: Task {
         switch self {
-        case .sendFeedback(let topicId, let text):
-            return .requestParameters(parameters: ["topic_id": topicId, "text": text], encoding: JSONEncoding.default)
+        case .sendFeedback(let topicId, let text, let token):
+            return .requestParameters(parameters: ["access_token": token, "topic_id": topicId, "text": text], encoding: JSONEncoding.default)
         }
     }
     

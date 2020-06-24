@@ -13,6 +13,6 @@ import Moya
 extension NetworkLayer: FeedbackNetworkProtocol {
 
     func sendFeedback(topicId: Int, text: String) -> Single<FeedbackResponse> {
-        return sendRequest(provider: feedbackProvider, target: FeedbackEndPoints.sendFeedback(topicId: topicId, text: text))
+        return sendRequest(provider: feedbackProvider, target: FeedbackEndPoints.sendFeedback(topicId: topicId, text: text, token: preferences?.userToken ?? ""))
     }
 }
