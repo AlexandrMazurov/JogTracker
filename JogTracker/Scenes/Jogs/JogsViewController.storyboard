@@ -51,7 +51,9 @@
                     </view>
                     <connections>
                         <outlet property="jogsTableView" destination="3ln-OD-lUI" id="p9J-1T-q8X"/>
+                        <outlet property="menuLeftCanstraint" destination="Fbu-13-oad" id="cGM-SP-M7s"/>
                         <outlet property="menuTableView" destination="sJE-83-kLk" id="dVi-Zh-niO"/>
+                        <outlet property="menuView" destination="RAC-Yr-VcK" id="e5o-5T-Wn8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgd-s5-QhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

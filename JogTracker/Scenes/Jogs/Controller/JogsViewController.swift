@@ -12,6 +12,7 @@ import RxCocoa
 private enum Constants {
     static let jogCellHeight: CGFloat = 130
     static let menuCellHeight: CGFloat = 50
+    static let openMenuDuration: Double = 0.3
     static let runLogoName = "runLogo"
     static let menuIconName = "menuIcon"
 }
@@ -21,15 +22,17 @@ class JogsViewController: BaseViewController {
     
     @IBOutlet private weak var jogsTableView: UITableView!
     @IBOutlet private weak var menuTableView: UITableView!
+    @IBOutlet private weak var menuLeftCanstraint: NSLayoutConstraint!
+    @IBOutlet private weak var menuView: UIView!
+    
+    let isMenuOpen = BehaviorRelay<Bool>(value: false)
     
     private var loginViewModel: JogsViewModel? {
         return viewModel as? JogsViewModel
     }
     
     override func viewDidLoad() {
-        configureNavigationBar()
-        self.jogsTableView.rowHeight = Constants.jogCellHeight
-        self.menuTableView.rowHeight = Constants.menuCellHeight
+        setupViewPreferences()
         super.viewDidLoad()
     }
     
@@ -87,22 +90,42 @@ class JogsViewController: BaseViewController {
             }
         .disposed(by: rxBag)
         
-        
-        
         self.rx
             .viewWillAppear
             .map { _ in Void() }
             .bind(onNext: viewModel.loadJogs)
             .disposed(by: rxBag)
         
+        navigationItem.leftBarButtonItem?.rx.tap
+            .bind(onNext: { [weak self] in
+                self?.isMenuOpen.accept(!(self?.isMenuOpen.value ?? false))
+            })
+            .disposed(by: rxBag)
+        
+        isMenuOpen.subscribe { [weak self] isOpen in
+            self?.setMenu(isOpen: isOpen.element ?? false, animated: true)
+        }.disposed(by: rxBag)
+        
     }
     
-    func configureNavigationBar() {
+    private func setupViewPreferences() {
+        configureNavigationBar()
+        self.jogsTableView.rowHeight = Constants.jogCellHeight
+        self.menuTableView.rowHeight = Constants.menuCellHeight
+    }
+    
+    private func setMenu(isOpen: Bool, animated: Bool) {
+        UIView.animate(withDuration: animated ? Constants.openMenuDuration: .zero) {
+            self.menuLeftCanstraint.constant = isOpen ? .zero: -self.menuView.frame.width
+            self.menuView.superview?.layoutIfNeeded()
+        }
+    }
+    
+    private func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: Constants.menuIconName),
                                                            style: .plain,
                                                            target: self,
                                                            action: nil)
-        navigationItem.leftBarButtonItem?.tintColor = .yellow
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: nil)
@@ -111,9 +134,4 @@ class JogsViewController: BaseViewController {
     }
 }
 
-extension JogsViewController: UITableViewDelegate {
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return Constants.jogCellHeight
-//    }
-}
+extension JogsViewController: UITableViewDelegate {}
