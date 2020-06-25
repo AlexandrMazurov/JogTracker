@@ -74,6 +74,12 @@ class JogsViewController: BaseViewController {
             }
         .disposed(by: rxBag)
         
+        jogsTableView.rx
+            .itemSelected
+            .subscribe { [weak self] indexPath in
+                self?.coordinator?.next(JogsNavigationState.toJogDetails(viewModel.jog(for: indexPath.element)))
+        }.disposed(by: rxBag)
+        
         menuTableView.rx
             .setDelegate(self)
             .disposed(by: rxBag)

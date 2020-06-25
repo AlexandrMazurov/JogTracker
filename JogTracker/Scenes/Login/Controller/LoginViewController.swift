@@ -15,7 +15,7 @@ import RxOptional
 
 private enum Constants {
     static let invalidUUIDMessage = "Invalid UUID"
-    static let invalidUUITitle = "Validation issue"
+    static let invalidUUIDTitle = "Validation issue"
 }
 
 class LoginViewController: BaseViewController {
@@ -44,7 +44,7 @@ class LoginViewController: BaseViewController {
         
         viewModel.uuidValidationStatus.asDriver().filterNil()
             .drive (onNext: { [weak self] isFailureValidation in
-                self?.showMessage(Constants.invalidUUIDMessage, Constants.invalidUUITitle)
+                self?.showMessage(Constants.invalidUUIDMessage, Constants.invalidUUIDTitle)
             }).disposed(by: rxBag)
         
         uuidTextField.rx.text

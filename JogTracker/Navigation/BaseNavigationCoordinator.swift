@@ -22,10 +22,10 @@ class BaseNavigationCoordinator: NavigationCoordinatorProtocol {
     func next(_ command: Any?) {}
     func movingBack() {}
     
-    func present(_ root: BaseViewController) {
+    func present(_ root: BaseViewController, presentationStyle: UIModalPresentationStyle) {
         childCoordinator = root.coordinator
         let controller: UIViewController = root.navigationController ?? root
-        controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = presentationStyle
         rootViewController.present(controller, animated: true)
     }
 
@@ -52,7 +52,7 @@ class BaseNavigationCoordinator: NavigationCoordinatorProtocol {
 }
     
 extension BaseNavigationCoordinator {
-    func showFlow<T>(_ type: T.Type, argument: Any? = nil) where T: BaseViewController {
+    func showFlow<T>(_ type: T.Type, presentationStype: UIModalPresentationStyle, argument: Any? = nil) where T: BaseViewController {
 
         let controller = argument != nil ?
             registry.container.resolve(type.self, argument: argument) :
@@ -63,7 +63,7 @@ extension BaseNavigationCoordinator {
             return
         }
         DispatchQueue.main.async {
-            self.present(baseController)
+            self.present(baseController, presentationStyle: presentationStype)
         }
     }
 }

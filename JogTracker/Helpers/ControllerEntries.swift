@@ -13,6 +13,7 @@ enum Storyboard: String {
     case feedback = "FeedbackViewController"
     case statistic = "StatisticViewController"
     case jogs = "JogsViewController"
+    case info = "JogInfoViewController"
     case launch = "Main"
 
     var instance: UIStoryboard {

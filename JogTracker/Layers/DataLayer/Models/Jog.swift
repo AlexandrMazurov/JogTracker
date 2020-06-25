@@ -19,9 +19,9 @@ struct Jogs: Decodable {
 struct Jog: Decodable {
     let id: Int?
     let userId: String?
-    let distance: Float
-    let time: Float
-    let date: Date
+    var distance: Float
+    var time: Float
+    var date: Date
     var speed: Float {
         return distance / (time / 60)
     }

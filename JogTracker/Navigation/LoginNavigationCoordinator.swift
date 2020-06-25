@@ -19,7 +19,6 @@ class LoginNavigationCoordinator: BaseNavigationCoordinator {
             print("Couldn't resolve \(command ?? "undefined command")")
             return
         }
-        
         switch navState {
         case .toJogs:
             self.push(JogsViewController.self)

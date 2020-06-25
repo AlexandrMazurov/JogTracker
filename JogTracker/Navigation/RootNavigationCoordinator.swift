@@ -22,13 +22,13 @@ class RootNavigationCoordinator: BaseNavigationCoordinator {
         
         switch navState {
         case .toLogin:
-            self.showFlow(LoginViewController.self)
+            self.showFlow(LoginViewController.self, presentationStype: .fullScreen)
         case .toLogout:
             if let presented = rootViewController.presentedViewController {
                 presented.dismiss(animated: true)
             }
         case .toJogs:
-            self.showFlow(JogsViewController.self)
+            self.showFlow(JogsViewController.self, presentationStype: .fullScreen)
         }
     }
     

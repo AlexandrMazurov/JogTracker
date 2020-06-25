@@ -9,7 +9,7 @@
 import Foundation
 
 enum JogsNavigationState {
-    case toStatistic, toFeedback
+    case toStatistic, toFeedback, toJogDetails(_ details: Jog?), toAddJog
 }
 
 class JogsNavigationCoordinator: BaseNavigationCoordinator {
@@ -24,6 +24,14 @@ class JogsNavigationCoordinator: BaseNavigationCoordinator {
             self.push(StatisticViewController.self)
         case .toFeedback:
             self.push(FeedbackViewController.self)
+        case .toJogDetails(let jog):
+            self.showFlow(JogInfoViewController.self, presentationStype: .overCurrentContext, argument: JogInfoAction.edit(jog: jog))
+        case .toAddJog:
+            self.showFlow(JogInfoViewController.self, presentationStype: .overCurrentContext, argument: JogInfoAction.addJog)
         }
+    }
+    
+    override func movingBack() {
+        rootViewController.dismiss(animated: true)
     }
 }

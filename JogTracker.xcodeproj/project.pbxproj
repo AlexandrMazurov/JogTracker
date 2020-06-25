@@ -67,6 +67,9 @@
 		1F62314124A38568009001CB /* JogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62314024A38568009001CB /* JogCell.swift */; };
 		1F62314324A38574009001CB /* JogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F62314224A38574009001CB /* JogCell.xib */; };
 		1F62314624A38A80009001CB /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F62314524A38A80009001CB /* ReusableView.swift */; };
+		1F83E6C424A3CF130049034A /* JogInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83E6C324A3CF130049034A /* JogInfoViewModel.swift */; };
+		1F83E6C824A3CFA90049034A /* JogInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F83E6C724A3CFA90049034A /* JogInfoViewController.storyboard */; };
+		1F83E6CA24A3E4600049034A /* JogInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83E6C924A3E4600049034A /* JogInfoViewController.swift */; };
 		6BD103CA5AC9EF6D720CC56B /* Pods_JogTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +137,9 @@
 		1F62314024A38568009001CB /* JogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogCell.swift; sourceTree = "<group>"; };
 		1F62314224A38574009001CB /* JogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JogCell.xib; sourceTree = "<group>"; };
 		1F62314524A38A80009001CB /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		1F83E6C324A3CF130049034A /* JogInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogInfoViewModel.swift; sourceTree = "<group>"; };
+		1F83E6C724A3CFA90049034A /* JogInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JogInfoViewController.storyboard; sourceTree = "<group>"; };
+		1F83E6C924A3E4600049034A /* JogInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogInfoViewController.swift; sourceTree = "<group>"; };
 		5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692A92CFD9D74A06B7E342B4 /* Pods-JogTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTracker.release.xcconfig"; path = "Target Support Files/Pods-JogTracker/Pods-JogTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -165,6 +171,7 @@
 		1F346180249FD6260037111B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1F83E6BE24A3CEAC0049034A /* JogInfo */,
 				1F346187249FD6740037111B /* Login */,
 				1F346184249FD64E0037111B /* FeedBack */,
 				1F346183249FD6470037111B /* Statistic */,
@@ -524,6 +531,32 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		1F83E6BE24A3CEAC0049034A /* JogInfo */ = {
+			isa = PBXGroup;
+			children = (
+				1F83E6C124A3CEED0049034A /* Controller */,
+				1F83E6C224A3CEF90049034A /* ViewModel */,
+				1F83E6C724A3CFA90049034A /* JogInfoViewController.storyboard */,
+			);
+			path = JogInfo;
+			sourceTree = "<group>";
+		};
+		1F83E6C124A3CEED0049034A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F83E6C924A3E4600049034A /* JogInfoViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1F83E6C224A3CEF90049034A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F83E6C324A3CF130049034A /* JogInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CDE8E17919A7747FF9B48621 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +640,7 @@
 				1F3933EF24A3AF2E00A900FA /* MenuCell.xib in Resources */,
 				1F3461B5249FECDF0037111B /* FeedbackViewController.storyboard in Resources */,
 				1F62314324A38574009001CB /* JogCell.xib in Resources */,
+				1F83E6C824A3CFA90049034A /* JogInfoViewController.storyboard in Resources */,
 				1F3461B9249FECFF0037111B /* JogsViewController.storyboard in Resources */,
 				1F4BA869249FA35F002D0056 /* Assets.xcassets in Resources */,
 				1F4BA867249FA35C002D0056 /* Main.storyboard in Resources */,
@@ -676,6 +710,7 @@
 				1F3EB2C124A1EC5800DFBF6E /* NetworkLayer+Jogs.swift in Sources */,
 				1F3461AB249FE9620037111B /* FeedbackViewModel.swift in Sources */,
 				1F4B297B249FC0BA009EB6DD /* SwinjectStoryboard+Setup.swift in Sources */,
+				1F83E6C424A3CF130049034A /* JogInfoViewModel.swift in Sources */,
 				1F346190249FDD390037111B /* UIViewController+Alerts.swift in Sources */,
 				1F3EB2C524A1F75300DFBF6E /* JogsNetworkProtocol.swift in Sources */,
 				1F4BA860249FA35C002D0056 /* AppDelegate.swift in Sources */,
@@ -688,6 +723,7 @@
 				1F3461C624A0F84C0037111B /* AppConstants.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
 				1F3461C424A0F7EF0037111B /* AuthEndPoints.swift in Sources */,
+				1F83E6CA24A3E4600049034A /* JogInfoViewController.swift in Sources */,
 				1F3EB2C324A1F5CC00DFBF6E /* CreateJogResponse.swift in Sources */,
 				1F346179249FC9B40037111B /* BaseNavigationCoordinator.swift in Sources */,
 				1F3461BD249FED300037111B /* ControllerEntries.swift in Sources */,

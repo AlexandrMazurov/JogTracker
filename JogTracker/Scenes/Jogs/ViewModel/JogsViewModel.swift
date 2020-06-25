@@ -48,6 +48,13 @@ class JogsViewModel: BaseViewModel {
             .disposed(by: rxBag)
     }
     
+    func jog(for indexPath: IndexPath?) -> Jog? {
+        guard let jogIndex = indexPath?.row else {
+            return nil
+        }
+        return jogsViewData.value[jogIndex]
+    }
+    
     private func configureMenu() {
         menuViewData.accept([
             MenuViewData(name: Constants.statistikMenuName, imageName: Constants.statisticMenuIconName),

@@ -85,6 +85,13 @@ class DependencyRegistry: DependencyRegistryProtocol {
         container.register(JogsViewModel.self) {
             JogsViewModel(jogsProvider: $0.resolve(JogsProviderProtocol.self))
         }
+        
+        container.register(JogInfoViewModel.self) { (res, arg: Any?) in
+            guard let action = arg as? JogInfoAction else {
+                return JogInfoViewModel(action: nil, jogProvider: res.resolve(JogsProviderProtocol.self))
+            }
+            return JogInfoViewModel(action: action, jogProvider: res.resolve(JogsProviderProtocol.self))
+        }
     }
     
     private func registerViewControllers() {
@@ -106,6 +113,12 @@ class DependencyRegistry: DependencyRegistryProtocol {
         
         container.register(JogsViewController.self) { _ in
             JogsViewController.instantiate(from: .jogs)
+        }
+        
+        container.register(JogInfoViewController.self) { (res, arg: Any?) in
+            let controller = JogInfoViewController.instantiate(from: .info)
+            controller.configure(baseVM: res.resolve(JogInfoViewModel.self, argument: arg), coordinator: self.navigationCoordinator)
+            return controller
         }
     }
     
