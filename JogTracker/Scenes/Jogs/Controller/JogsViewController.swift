@@ -41,13 +41,16 @@ class JogsViewController: BaseViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationController?.navigationBar.barTintColor = .darkText
         self.navigationController?.navigationBar.barStyle = .black
-                                
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationItem.setHidesBackButton(false, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("")
     }
     
     override func createObservers() {
@@ -134,6 +137,16 @@ class JogsViewController: BaseViewController {
                 self?.coordinator?.next(JogsNavigationState.toAddJog)
             }).disposed(by: rxBag)
         
+        guard let jogsCoordinator = coordinator as? JogsNavigationCoordinator else {
+            return
+        }
+        
+        jogsCoordinator.movingBackCompleted
+            .filterNil()
+            .filter { $0 == true }
+            .map { _ in Void() }
+            .bind(onNext: viewModel.loadJogs)
+            .disposed(by: rxBag)
     }
     
     private func setupViewPreferences() {
@@ -145,7 +158,7 @@ class JogsViewController: BaseViewController {
     private func setMenu(isOpen: Bool, animated: Bool) {
         UIView.animate(withDuration: animated ? Constants.openMenuDuration: .zero) { [weak self] in
             self?.menuLeftCanstraint.constant = isOpen ? .zero: -(self?.menuView.frame.width ?? .zero)
-            self?.menuView.superview?.layoutIfNeeded()
+            self?.view.layoutIfNeeded()
         }
     }
     

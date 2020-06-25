@@ -7,12 +7,16 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 enum JogsNavigationState {
     case toStatistic(_ jogs: [Jog]), toFeedback, toJogDetails(_ details: Jog?), toAddJog
 }
 
 class JogsNavigationCoordinator: BaseNavigationCoordinator {
+    
+    let movingBackCompleted = BehaviorRelay<Bool?>(value: nil)
     
     override func next(_ command: Any?) {
         guard let navState = command as? JogsNavigationState else {
@@ -33,5 +37,6 @@ class JogsNavigationCoordinator: BaseNavigationCoordinator {
     
     override func movingBack() {
         rootViewController.dismiss(animated: true)
+        movingBackCompleted.accept(true)
     }
 }
