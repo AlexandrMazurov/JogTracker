@@ -57,9 +57,9 @@ class JogInfoViewController: BaseViewController {
             }).disposed(by: rxBag)
         
         viewModel.completionActionState
-            .subscribe(onNext: { [weak self] isSuccess in
+            .subscribe(onNext: { isSuccess in
                 if isSuccess ?? false {
-                    self?.coordinator?.movingBack()
+                    coordinator.movingBack()
                 }
             }).disposed(by: rxBag)
         
@@ -80,7 +80,7 @@ class JogInfoViewController: BaseViewController {
             .drive(viewModel.date)
             .disposed(by: rxBag)
         
-        cancelButton.rx.tap
+        cancelButton.rx.tap.debug()
             .bind(onNext: coordinator.movingBack)
             .disposed(by: rxBag)
         

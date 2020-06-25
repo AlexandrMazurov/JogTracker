@@ -10,7 +10,7 @@
         <!--Feedback View Controller-->
         <scene sceneID="ElQ-CV-f31">
             <objects>
-                <viewController storyboardIdentifier="FeedbackViewController" id="DQU-bD-tNT" customClass="FeedbackViewController" customModule="JogTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedbackViewController" modalTransitionStyle="crossDissolve" id="DQU-bD-tNT" customClass="FeedbackViewController" customModule="JogTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UCs-E3-MEL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
