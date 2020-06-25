@@ -70,6 +70,9 @@
 		1F83E6C424A3CF130049034A /* JogInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83E6C324A3CF130049034A /* JogInfoViewModel.swift */; };
 		1F83E6C824A3CFA90049034A /* JogInfoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F83E6C724A3CFA90049034A /* JogInfoViewController.storyboard */; };
 		1F83E6CA24A3E4600049034A /* JogInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83E6C924A3E4600049034A /* JogInfoViewController.swift */; };
+		1FEC4D1324A4C6C50054E8E7 /* StatisticManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC4D1224A4C6C50054E8E7 /* StatisticManagerProtocol.swift */; };
+		1FEC4D1524A4C6D40054E8E7 /* StatisticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC4D1424A4C6D40054E8E7 /* StatisticManager.swift */; };
+		1FEC4D1824A4C7240054E8E7 /* WeakStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEC4D1724A4C7240054E8E7 /* WeakStatistic.swift */; };
 		6BD103CA5AC9EF6D720CC56B /* Pods_JogTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +143,9 @@
 		1F83E6C324A3CF130049034A /* JogInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogInfoViewModel.swift; sourceTree = "<group>"; };
 		1F83E6C724A3CFA90049034A /* JogInfoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JogInfoViewController.storyboard; sourceTree = "<group>"; };
 		1F83E6C924A3E4600049034A /* JogInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogInfoViewController.swift; sourceTree = "<group>"; };
+		1FEC4D1224A4C6C50054E8E7 /* StatisticManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManagerProtocol.swift; sourceTree = "<group>"; };
+		1FEC4D1424A4C6D40054E8E7 /* StatisticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticManager.swift; sourceTree = "<group>"; };
+		1FEC4D1724A4C7240054E8E7 /* WeakStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakStatistic.swift; sourceTree = "<group>"; };
 		5107BD0189A91C4789A09320 /* Pods_JogTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JogTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692A92CFD9D74A06B7E342B4 /* Pods-JogTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JogTracker.release.xcconfig"; path = "Target Support Files/Pods-JogTracker/Pods-JogTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,10 +374,8 @@
 		1F3461CA24A0FC3B0037111B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1F3461CB24A0FC4A0037111B /* UserCredentials.swift */,
-				1F3EB2BE24A1E18900DFBF6E /* Jog.swift */,
-				1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */,
-				1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */,
+				1FEC4D1624A4C70D0054E8E7 /* API */,
+				1FEC4D1724A4C7240054E8E7 /* WeakStatistic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 		1F3461CF24A101630037111B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1FEC4D1124A4C6AE0054E8E7 /* Statistic */,
 				1F3EB2D424A3384900DFBF6E /* Feedback */,
 				1F3EB2C624A1F8B200DFBF6E /* Jogs */,
 				1F3461D424A102080037111B /* Authentication */,
@@ -557,6 +562,26 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		1FEC4D1124A4C6AE0054E8E7 /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				1FEC4D1224A4C6C50054E8E7 /* StatisticManagerProtocol.swift */,
+				1FEC4D1424A4C6D40054E8E7 /* StatisticManager.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		1FEC4D1624A4C70D0054E8E7 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1F3461CB24A0FC4A0037111B /* UserCredentials.swift */,
+				1F3EB2BE24A1E18900DFBF6E /* Jog.swift */,
+				1F3EB2C224A1F5CC00DFBF6E /* CreateJogResponse.swift */,
+				1F3EB2D224A336A500DFBF6E /* FeedbackResponse.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		CDE8E17919A7747FF9B48621 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -696,6 +721,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FEC4D1324A4C6C50054E8E7 /* StatisticManagerProtocol.swift in Sources */,
 				1F34618E249FDAA20037111B /* View-Layout.swift in Sources */,
 				1F3461A1249FE9230037111B /* FeedbackViewController.swift in Sources */,
 				1F3461B1249FE9830037111B /* LaunchViewModel.swift in Sources */,
@@ -722,6 +748,7 @@
 				1F3461AD249FE96D0037111B /* StatisticViewModel.swift in Sources */,
 				1F3461C624A0F84C0037111B /* AppConstants.swift in Sources */,
 				1F4BA862249FA35C002D0056 /* SceneDelegate.swift in Sources */,
+				1FEC4D1524A4C6D40054E8E7 /* StatisticManager.swift in Sources */,
 				1F3461C424A0F7EF0037111B /* AuthEndPoints.swift in Sources */,
 				1F83E6CA24A3E4600049034A /* JogInfoViewController.swift in Sources */,
 				1F3EB2C324A1F5CC00DFBF6E /* CreateJogResponse.swift in Sources */,
@@ -732,6 +759,7 @@
 				1F34617F249FCD770037111B /* RootNavigationCoordinator.swift in Sources */,
 				1F3461C824A0FBC80037111B /* AuthNetworkProtocol.swift in Sources */,
 				1F62314624A38A80009001CB /* ReusableView.swift in Sources */,
+				1FEC4D1824A4C7240054E8E7 /* WeakStatistic.swift in Sources */,
 				1F3461C224A0EF740037111B /* NetworkLayer.swift in Sources */,
 				1F3933F224A3B1BE00A900FA /* MenuViewData.swift in Sources */,
 				1F346177249FC9670037111B /* NavigationCoordinatorProtocol.swift in Sources */,
