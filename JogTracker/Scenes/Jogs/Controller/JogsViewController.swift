@@ -99,10 +99,11 @@ class JogsViewController: BaseViewController {
         
         menuTableView.rx
             .itemSelected
-            .subscribe { indexPath in
+            .subscribe { [weak self] indexPath in
                 guard let type = MenuType(rawValue: indexPath.element?.row ?? .zero) else {
                     return
                 }
+                self?.isMenuOpen.accept(false)
                 switch type {
                 case .statistic:
                     coordinator.next(JogsNavigationState.toStatistic(viewModel.jogsViewData.value))

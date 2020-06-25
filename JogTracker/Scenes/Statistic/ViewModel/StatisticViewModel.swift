@@ -12,6 +12,9 @@ import RxCocoa
 class StatisticViewModel: BaseViewModel {
     
     let weakStatisticData = BehaviorRelay<[WeekStatistic]>(value: [])
+    let fromFilterDate = BehaviorRelay<Date?>(value: nil)
+    let toFilterDate = BehaviorRelay<Date?>(value: nil)
+    private var unfilteredStatistic: [WeekStatistic]?
     private let jogs: [Jog]?
     
     private var statisticManager: StatisticManagerProtocol?
@@ -28,6 +31,27 @@ class StatisticViewModel: BaseViewModel {
     }
     
     override func createObservers() {
+
+    }
+    
+    func applyFilter() {
+        guard let unfilteredStatistic = unfilteredStatistic else {
+            return
+        }
+        var filteredStatistic = unfilteredStatistic
+        if let fromDate = fromFilterDate.value {
+            filteredStatistic = filteredStatistic.filter { $0.startWeekDate > fromDate }
+        }
+        if let toDate = toFilterDate.value {
+            filteredStatistic = filteredStatistic.filter { $0.endWeekDate < toDate }
+        }
+        weakStatisticData.accept(filteredStatistic)
+    }
+    
+    func resetFilter() {
+        fromFilterDate.accept(nil)
+        toFilterDate.accept(nil)
+        setupWeekStatistic()
     }
     
     private func setupWeekStatistic() {
@@ -35,6 +59,8 @@ class StatisticViewModel: BaseViewModel {
             let jogs = jogs else {
             return
         }
-        weakStatisticData.accept(statisticManager.calculateStatistic(from: jogs))
+        let statistic = statisticManager.calculateStatistic(from: jogs)
+        unfilteredStatistic = statistic
+        weakStatisticData.accept(statistic)
     }
 }
