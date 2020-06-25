@@ -38,7 +38,7 @@ class LoginViewController: BaseViewController {
         viewModel.auth?.isAuthenticated.asDriver().filterNil()
             .drive(onNext: { [weak self] isAuthenticated in
                 if isAuthenticated {
-                    self?.coordinator?.next(LoginNavigationState.toJogs)
+                    self?.coordinator?.movingBack()
                 }
             }).disposed(by: rxBag)
         

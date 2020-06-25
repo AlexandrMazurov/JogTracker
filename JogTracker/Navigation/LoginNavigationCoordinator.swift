@@ -8,22 +8,9 @@
 
 import Foundation
 
-enum LoginNavigationState {
-    case toJogs
-}
-
 class LoginNavigationCoordinator: BaseNavigationCoordinator {
 
-    override func next(_ command: Any?) {
-        guard let navState = command as? LoginNavigationState else {
-            print("Couldn't resolve \(command ?? "undefined command")")
-            return
-        }
-        switch navState {
-        case .toJogs:
-            self.push(JogsViewController.self)
-        }
-    }
+    override func next(_ command: Any?) {}
     
     override func movingBack() {
         rootViewController.dismiss(animated: true)

@@ -80,7 +80,7 @@ class JogInfoViewController: BaseViewController {
             .drive(viewModel.date)
             .disposed(by: rxBag)
         
-        cancelButton.rx.tap.debug()
+        cancelButton.rx.tap
             .bind(onNext: coordinator.movingBack)
             .disposed(by: rxBag)
         
