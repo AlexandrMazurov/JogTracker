@@ -9,5 +9,5 @@
 import Foundation
 
 protocol StatisticManagerProtocol {
-    func calculateStatistic(from jogs: [Jog]) -> [WeakStatistic]
+    func calculateStatistic(from jogs: [Jog]) -> [WeekStatistic]
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct WeakStatistic {
-    let weakNumber: Int
-    let startWeakDate: Date
+struct WeekStatistic {
+    let weekNumber: Int
+    let startWeekDate: Date
     let endWeekDate: Date
     let averageSpeed: Float
     let avarageTime: Float

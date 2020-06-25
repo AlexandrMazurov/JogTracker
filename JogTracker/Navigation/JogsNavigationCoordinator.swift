@@ -9,7 +9,7 @@
 import Foundation
 
 enum JogsNavigationState {
-    case toStatistic, toFeedback, toJogDetails(_ details: Jog?), toAddJog
+    case toStatistic(_ jogs: [Jog]), toFeedback, toJogDetails(_ details: Jog?), toAddJog
 }
 
 class JogsNavigationCoordinator: BaseNavigationCoordinator {
@@ -20,8 +20,8 @@ class JogsNavigationCoordinator: BaseNavigationCoordinator {
             return
         }
         switch navState {
-        case .toStatistic:
-            self.push(StatisticViewController.self)
+        case .toStatistic(let jogs):
+            self.push(StatisticViewController.self, argument: jogs)
         case .toFeedback:
             self.showFlow(FeedbackViewController.self, presentationStype: .overCurrentContext)
         case .toJogDetails(let jog):

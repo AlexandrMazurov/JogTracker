@@ -63,6 +63,10 @@ class DependencyRegistry: DependencyRegistryProtocol {
         container.register(FeedbackProviderProtocol.self) {
             FeedbackProvider(network: $0.resolve(NetworkLayer.self))
         }.inObjectScope(.container)
+        
+        container.register(StatisticManagerProtocol.self) { _ in
+            StatisticManager()
+        }
     }
     
     private func registerViewModels() {
@@ -78,8 +82,11 @@ class DependencyRegistry: DependencyRegistryProtocol {
             FeedbackViewModel(feedbackProvider: $0.resolve(FeedbackProviderProtocol.self))
         }
         
-        container.register(StatisticViewModel.self) { _ in
-            StatisticViewModel()
+        container.register(StatisticViewModel.self) { (res, arg: Any?) in
+            guard let jogs = arg as? [Jog] else {
+                return StatisticViewModel(jogs: nil, statisticManager: res.resolve(StatisticManagerProtocol.self))
+            }
+            return StatisticViewModel(jogs: jogs, statisticManager: res.resolve(StatisticManagerProtocol.self))
         }
         
         container.register(JogsViewModel.self) {
@@ -107,8 +114,10 @@ class DependencyRegistry: DependencyRegistryProtocol {
             FeedbackViewController.instantiate(from: .feedback)
         }
         
-        container.register(StatisticViewController.self) { _ in
-            StatisticViewController.instantiate(from: .statistic)
+        container.register(StatisticViewController.self) { (res, arg: Any?) in
+            let controller = StatisticViewController.instantiate(from: .statistic)
+            controller.configure(baseVM: res.resolve(StatisticViewModel.self, argument: arg), coordinator: self.navigationCoordinator)
+            return controller
         }
         
         container.register(JogsViewController.self) { _ in

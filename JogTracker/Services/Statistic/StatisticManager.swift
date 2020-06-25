@@ -28,37 +28,23 @@ class DateInterval: Hashable {
 
 class StatisticManager: StatisticManagerProtocol {
 
-    func calculateStatistic(from jogs: [Jog]) -> [WeakStatistic] {
+    func calculateStatistic(from jogs: [Jog]) -> [WeekStatistic] {
         var weekStartAndEndDates = Set<DateInterval>()
         jogs.forEach {
             weekStartAndEndDates
                 .insert(DateInterval(startDate: $0.date.startOfWeek ?? Date(), endDate: $0.date.endOfWeek ?? Date()))
         }
         let filteredWeeks = Array(weekStartAndEndDates).sorted { $0.startDate < $1.startDate }
-        let weakStatistic: [WeakStatistic] = filteredWeeks.enumerated().compactMap { (index, inteval) in
+        let weekStatistic: [WeekStatistic] = filteredWeeks.enumerated().compactMap { (index, inteval) in
             let jogs = jogs.filter { inteval.startDate < $0.date && $0.date < inteval.endDate }
-            return WeakStatistic(weakNumber: index + 1,
-                                 startWeakDate: inteval.startDate,
+            return WeekStatistic(weekNumber: index + 1,
+                                 startWeekDate: inteval.startDate,
                                  endWeekDate: inteval.endDate,
                                  averageSpeed: (jogs.map { $0.speed }.reduce(.zero, +) / Float(jogs.count)),
                                  avarageTime: (jogs.map { $0.time }.reduce(.zero, +) / Float(jogs.count)),
                                  distance: jogs.map { $0.distance }.reduce(.zero, +))
-        }.filter{ $0.averageSpeed != .nan }.sorted { $0.startWeakDate < $1.startWeakDate }
-        return weakStatistic
+        }.filter{ $0.averageSpeed > 0 }.sorted { $0.startWeekDate < $1.startWeekDate }
+        return weekStatistic
     }
     
-}
-
-extension Date {
-    var startOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
-    }
-
-    var endOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 7, to: sunday)
-    }
 }

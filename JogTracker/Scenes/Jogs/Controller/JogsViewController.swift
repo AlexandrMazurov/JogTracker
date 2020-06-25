@@ -105,7 +105,7 @@ class JogsViewController: BaseViewController {
                 }
                 switch type {
                 case .statistic:
-                    coordinator.next(JogsNavigationState.toStatistic)
+                    coordinator.next(JogsNavigationState.toStatistic(viewModel.jogsViewData.value))
                 case .feedback:
                     coordinator.next(JogsNavigationState.toFeedback)
                 }

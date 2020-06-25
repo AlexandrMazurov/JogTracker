@@ -47,10 +47,7 @@ extension SwinjectStoryboard {
                 controller.configure(baseVM: reg.resolve(FeedbackViewModel.self), coordinator: coordinator)
             }
             
-            dependencyRegistry.container.storyboardInitCompleted(StatisticViewController.self) { (reg, controller) in
-                let coordinator = dependencyRegistry.makeJogsNavigationCoordinator(rootViewController: controller)
-                controller.configure(baseVM: reg.resolve(StatisticViewModel.self), coordinator: coordinator)
-            }
+            dependencyRegistry.container.storyboardInitCompleted(StatisticViewController.self) { _, _ in }
             
             dependencyRegistry.container.storyboardInitCompleted(JogInfoViewController.self) { _, _ in } 
 
