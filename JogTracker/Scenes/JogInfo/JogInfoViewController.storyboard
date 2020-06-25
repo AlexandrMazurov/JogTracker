@@ -159,7 +159,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.73691673801369861" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75254173801369861" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wnB-mC-1yn" firstAttribute="centerY" secondItem="kMv-0g-V9P" secondAttribute="centerY" id="EU2-JW-c2p"/>
                             <constraint firstItem="wnB-mC-1yn" firstAttribute="leading" secondItem="dXz-eq-YR4" secondAttribute="leading" constant="30" id="kGk-KE-pAS"/>

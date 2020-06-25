@@ -23,7 +23,7 @@ class JogsNavigationCoordinator: BaseNavigationCoordinator {
         case .toStatistic:
             self.push(StatisticViewController.self)
         case .toFeedback:
-            self.push(FeedbackViewController.self)
+            self.showFlow(FeedbackViewController.self, presentationStype: .overCurrentContext)
         case .toJogDetails(let jog):
             self.showFlow(JogInfoViewController.self, presentationStype: .overCurrentContext, argument: JogInfoAction.edit(jog: jog))
         case .toAddJog:
