@@ -149,12 +149,12 @@ class StatisticViewController: BaseViewController {
     }
     
     private func setFilter(isOpen: Bool, animated: Bool) {
-        UIView.animate(withDuration: animated ? Constants.openFilterDuration: .zero) {
+        UIView.animate(withDuration: animated ? Constants.openFilterDuration: .zero) { [weak self] in
             if !isOpen {
-                self.view.endEditing(true)
+                self?.view.endEditing(true)
             }
-            self.filterViewTopConstraint.constant = isOpen ? .zero: -self.filterView.frame.height
-            self.filterView.superview?.layoutIfNeeded()
+            self?.filterViewTopConstraint.constant = isOpen ? .zero: -(self?.filterView.frame.height ?? .zero)
+            self?.filterView.superview?.layoutIfNeeded()
         }
     }
     

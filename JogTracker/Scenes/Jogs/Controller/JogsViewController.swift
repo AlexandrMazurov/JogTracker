@@ -78,6 +78,7 @@ class JogsViewController: BaseViewController {
         jogsTableView.rx
             .itemSelected
             .subscribe { [weak self] indexPath in
+                self?.isMenuOpen.accept(false)
                 self?.coordinator?.next(JogsNavigationState.toJogDetails(viewModel.jog(for: indexPath.element)))
         }.disposed(by: rxBag)
         
@@ -133,23 +134,6 @@ class JogsViewController: BaseViewController {
                 self?.coordinator?.next(JogsNavigationState.toAddJog)
             }).disposed(by: rxBag)
         
-        endEditing()
-    }
-
-    private func endEditing() {
-        observingEndEditing(
-            view.rx.tapGesture().asDriver()
-        )
-    }
-    
-    private func observingEndEditing<T>(_ driver: Driver<T>) where T: UIGestureRecognizer {
-        driver
-            .drive(onNext: {[weak self] (_) in
-                if self?.isMenuOpen.value ?? false {
-                    self?.isMenuOpen.accept(false)
-                }
-            })
-            .disposed(by: rxBag)
     }
     
     private func setupViewPreferences() {
@@ -159,9 +143,9 @@ class JogsViewController: BaseViewController {
     }
     
     private func setMenu(isOpen: Bool, animated: Bool) {
-        UIView.animate(withDuration: animated ? Constants.openMenuDuration: .zero) {
-            self.menuLeftCanstraint.constant = isOpen ? .zero: -self.menuView.frame.width
-            self.menuView.superview?.layoutIfNeeded()
+        UIView.animate(withDuration: animated ? Constants.openMenuDuration: .zero) { [weak self] in
+            self?.menuLeftCanstraint.constant = isOpen ? .zero: -(self?.menuView.frame.width ?? .zero)
+            self?.menuView.superview?.layoutIfNeeded()
         }
     }
     
