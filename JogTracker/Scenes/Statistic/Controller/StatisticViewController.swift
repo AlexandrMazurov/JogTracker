@@ -8,6 +8,7 @@
 
 import RxSwift
 import RxCocoa
+import RxGesture
 
 private enum CurrentEditingTextView {
     case fromDate, toDate
@@ -120,6 +121,22 @@ class StatisticViewController: BaseViewController {
             .bind(onNext: { [weak self] in
                 self?.isFilterOpen.accept(!(self?.isFilterOpen.value ?? false))
             }).disposed(by: rxBag)
+        
+        endEditing()
+    }
+    
+    private func endEditing() {
+        observingEndEditing(
+            view.rx.tapGesture().asDriver()
+        )
+    }
+    
+    private func observingEndEditing<T>(_ driver: Driver<T>) where T: UIGestureRecognizer {
+        driver
+            .drive(onNext: {[weak self] (_) in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: rxBag)
     }
     
     private func setupDatePicker() {
@@ -133,6 +150,9 @@ class StatisticViewController: BaseViewController {
     
     private func setFilter(isOpen: Bool, animated: Bool) {
         UIView.animate(withDuration: animated ? Constants.openFilterDuration: .zero) {
+            if !isOpen {
+                self.view.endEditing(true)
+            }
             self.filterViewTopConstraint.constant = isOpen ? .zero: -self.filterView.frame.height
             self.filterView.superview?.layoutIfNeeded()
         }
