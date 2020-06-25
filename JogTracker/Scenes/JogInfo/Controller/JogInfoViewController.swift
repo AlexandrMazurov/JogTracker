@@ -8,8 +8,9 @@
 
 import RxSwift
 import RxCocoa
+import RxViewController
+import RxGesture
 import RxOptional
-import RxKeyboard
 
 private enum Constants {
     static let invalidCredentialsMessage = "Invalid credentials"
@@ -87,6 +88,23 @@ class JogInfoViewController: BaseViewController {
             .bind(onNext: viewModel.completeActions)
             .disposed(by: rxBag)
         
+        endEditing()
     }
     
+    private func endEditing() {
+        observingEndEditing(
+            view.rx.tapGesture().asDriver()
+        )
+        observingEndEditing(
+            view.rx.swipeGesture([.down]).asDriver()
+        )
+    }
+    
+    private func observingEndEditing<T>(_ driver: Driver<T>) where T: UIGestureRecognizer {
+        driver
+            .drive(onNext: {[weak self] (_) in
+                self?.view.endEditing(true)
+            })
+            .disposed(by: rxBag)
+    }
 }

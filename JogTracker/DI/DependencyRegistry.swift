@@ -74,8 +74,8 @@ class DependencyRegistry: DependencyRegistryProtocol {
             LoginViewModel(auth: $0.resolve(AuthServiceProtocol.self))
         }
         
-        container.register(FeedbackViewModel.self) { _ in
-            FeedbackViewModel()
+        container.register(FeedbackViewModel.self) {
+            FeedbackViewModel(feedbackProvider: $0.resolve(FeedbackProviderProtocol.self))
         }
         
         container.register(StatisticViewModel.self) { _ in

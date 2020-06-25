@@ -17,6 +17,10 @@ private enum Constants {
     
 }
 
+enum MenuType: Int {
+    case statistic, feedback
+}
+
 class JogsViewModel: BaseViewModel {
     
     let jogsViewData = BehaviorRelay<[Jog]>(value: [])

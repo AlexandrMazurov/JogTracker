@@ -96,6 +96,20 @@ class JogsViewController: BaseViewController {
             }
         .disposed(by: rxBag)
         
+        menuTableView.rx
+            .itemSelected
+            .subscribe { [weak self] indexPath in
+                guard let type = MenuType(rawValue: indexPath.element?.row ?? .zero) else {
+                    return
+                }
+                switch type {
+                case .statistic:
+                    self?.coordinator?.next(JogsNavigationState.toStatistic)
+                case .feedback:
+                    self?.coordinator?.next(JogsNavigationState.toFeedback)
+                }
+            }.disposed(by: rxBag)
+        
         self.rx
             .viewWillAppear
             .map { _ in Void() }
