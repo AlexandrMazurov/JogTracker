@@ -48,7 +48,6 @@ extension JogsEndPoints: TargetType {
         case .jogs(let token):
             return .requestParameters(parameters: ["access_token": token], encoding: URLEncoding.default)
         case .createJog(let jog, let token):
-
             return .requestParameters(parameters: ["access_token": token,
                                                    "date": jog.date.timeIntervalSinceReferenceDate.description,
                                                    "distance": jog.distance,

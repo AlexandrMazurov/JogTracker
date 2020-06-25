@@ -112,6 +112,10 @@ class JogsViewController: BaseViewController {
             self?.setMenu(isOpen: isOpen.element ?? false, animated: true)
         }.disposed(by: rxBag)
         
+        navigationItem.rightBarButtonItem?.rx.tap
+            .bind(onNext: { [weak self] in
+                self?.coordinator?.next(JogsNavigationState.toAddJog)
+            }).disposed(by: rxBag)
     }
     
     private func setupViewPreferences() {

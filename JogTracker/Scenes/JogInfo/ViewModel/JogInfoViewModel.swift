@@ -102,7 +102,7 @@ class JogInfoViewModel: BaseViewModel {
                       userId: nil,
                       distance: Float(distance.value) ?? .zero,
                       time: Float(time.value) ?? .zero,
-                      date: date.value)
+                      date: Date(timeIntervalSinceReferenceDate: date.value.timeIntervalSinceReferenceDate/10))
         self.inProgress.onNext(.started)
         jogProvider?.createJog(jog: jog)
             .subscribe(onSuccess: { [weak self] isSuccess in
