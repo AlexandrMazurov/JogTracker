@@ -98,14 +98,14 @@ class LoginViewController: BaseViewController {
     }
     
     private func moveUp(_ keyboardHeight: CGFloat, textField: UITextField? ) -> CGFloat? {
-         if keyboardHeight == 0 { return 0 }
+        if keyboardHeight == .zero { return .zero }
          guard let textField = textField, textField.isFirstResponder
          else {
              return nil
          }
         let distance = view.frame.height - textField.convert(textField.frame.origin, to: view).y - textField.frame.height
          let delta = keyboardHeight + distance
-         return delta > 0 ? delta: 0
+        return delta > .zero ? delta: .zero
      }
     
     override func viewWillAppear(_ animated: Bool) {

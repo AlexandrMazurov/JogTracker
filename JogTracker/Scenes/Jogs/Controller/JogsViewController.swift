@@ -132,6 +132,24 @@ class JogsViewController: BaseViewController {
             .bind(onNext: { [weak self] in
                 self?.coordinator?.next(JogsNavigationState.toAddJog)
             }).disposed(by: rxBag)
+        
+        endEditing()
+    }
+
+    private func endEditing() {
+        observingEndEditing(
+            view.rx.tapGesture().asDriver()
+        )
+    }
+    
+    private func observingEndEditing<T>(_ driver: Driver<T>) where T: UIGestureRecognizer {
+        driver
+            .drive(onNext: {[weak self] (_) in
+                if self?.isMenuOpen.value ?? false {
+                    self?.isMenuOpen.accept(false)
+                }
+            })
+            .disposed(by: rxBag)
     }
     
     private func setupViewPreferences() {
