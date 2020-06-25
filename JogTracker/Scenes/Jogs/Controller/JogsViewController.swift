@@ -53,7 +53,8 @@ class JogsViewController: BaseViewController {
     override func createObservers() {
         super.createObservers()
         
-        guard let viewModel = loginViewModel else {
+        guard let viewModel = loginViewModel,
+            let coordinator = coordinator else {
             return
         }
         
@@ -98,15 +99,15 @@ class JogsViewController: BaseViewController {
         
         menuTableView.rx
             .itemSelected
-            .subscribe { [weak self] indexPath in
+            .subscribe { indexPath in
                 guard let type = MenuType(rawValue: indexPath.element?.row ?? .zero) else {
                     return
                 }
                 switch type {
                 case .statistic:
-                    self?.coordinator?.next(JogsNavigationState.toStatistic)
+                    coordinator.next(JogsNavigationState.toStatistic)
                 case .feedback:
-                    self?.coordinator?.next(JogsNavigationState.toFeedback)
+                    coordinator.next(JogsNavigationState.toFeedback)
                 }
             }.disposed(by: rxBag)
         
