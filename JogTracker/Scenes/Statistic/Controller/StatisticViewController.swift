@@ -45,6 +45,14 @@ class StatisticViewController: BaseViewController {
         return viewModel as? StatisticViewModel
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        isFilterOpen.subscribe { [weak self] isOpen in
+            self?.setFilter(isOpen: isOpen.element ?? false, animated: true)
+        }.disposed(by: rxBag)
+    }
+    
     override func createObservers() {
         super.createObservers()
         
@@ -113,10 +121,6 @@ class StatisticViewController: BaseViewController {
                 }
             }).disposed(by: rxBag)
         
-        isFilterOpen.subscribe { [weak self] isOpen in
-            self?.setFilter(isOpen: isOpen.element ?? false, animated: true)
-        }.disposed(by: rxBag)
-        
         navigationItem.rightBarButtonItem?.rx.tap
             .bind(onNext: { [weak self] in
                 self?.isFilterOpen.accept(!(self?.isFilterOpen.value ?? false))
@@ -149,12 +153,14 @@ class StatisticViewController: BaseViewController {
     }
     
     private func setFilter(isOpen: Bool, animated: Bool) {
-        UIView.animate(withDuration: animated ? Constants.openFilterDuration: .zero) { [weak self] in
+        UIView.animate(withDuration: Constants.openFilterDuration) { [weak self] in
             if !isOpen {
                 self?.view.endEditing(true)
             }
             self?.filterViewTopConstraint.constant = isOpen ? .zero: -(self?.filterView.frame.height ?? .zero)
-            self?.filterView.superview?.layoutIfNeeded()
+            if animated {
+                self?.filterView.superview?.layoutIfNeeded()
+            }
         }
     }
     
@@ -163,6 +169,7 @@ class StatisticViewController: BaseViewController {
         statisticTableView.backgroundColor = .clear
         setupDatePicker()
         configureNavigationBar()
+        setFilter(isOpen: false, animated: false)
     }
     
     private func configureNavigationBar() {

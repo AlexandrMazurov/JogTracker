@@ -50,7 +50,11 @@ class JogsViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("")
+        
+        isMenuOpen.subscribe { [weak self] isOpen in
+            self?.setMenu(isOpen: isOpen.element ?? false, animated: true)
+        }.disposed(by: rxBag)
+        
     }
     
     override func createObservers() {
@@ -128,10 +132,6 @@ class JogsViewController: BaseViewController {
             })
             .disposed(by: rxBag)
         
-        isMenuOpen.subscribe { [weak self] isOpen in
-            self?.setMenu(isOpen: isOpen.element ?? false, animated: true)
-        }.disposed(by: rxBag)
-        
         navigationItem.rightBarButtonItem?.rx.tap
             .bind(onNext: { [weak self] in
                 self?.coordinator?.next(JogsNavigationState.toAddJog)
@@ -153,12 +153,15 @@ class JogsViewController: BaseViewController {
         configureNavigationBar()
         self.jogsTableView.rowHeight = Constants.jogCellHeight
         self.menuTableView.rowHeight = Constants.menuCellHeight
+        setMenu(isOpen: false, animated: false)
     }
     
     private func setMenu(isOpen: Bool, animated: Bool) {
-        UIView.animate(withDuration: animated ? Constants.openMenuDuration: .zero) { [weak self] in
+        UIView.animate(withDuration: Constants.openMenuDuration) { [weak self] in
             self?.menuLeftCanstraint.constant = isOpen ? .zero: -(self?.menuView.frame.width ?? .zero)
-            self?.view.layoutIfNeeded()
+            if animated {
+                self?.view.layoutIfNeeded()
+            }
         }
     }
     
