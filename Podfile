@@ -8,7 +8,7 @@ target 'JogTracker' do
   # Pods for JogTracker
 
   # DI
-    pod 'Swinject'
+    pod 'Swinject','~> 2.6.2'
     pod 'SwinjectStoryboard'
  
   # RX
